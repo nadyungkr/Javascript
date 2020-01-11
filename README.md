@@ -77,7 +77,7 @@ function myFunction() {
 
 ````html
 <script>
-document.write(1 + 1);
+document.write(1 + 1); //2로 경고창이 뜬다
 </script>
 ````
 
@@ -153,13 +153,10 @@ console.log(1 + 1);
     var x;
     x = 6;
     y = 5;
-    document.getElementById("ex").innerHTML = x;
-    document.getElementById("example").innerHTML = x + y;
-<<<<<<< HEAD
+    document.getElementById("ex").innerHTML = x; // 6
+    document.getElementById("example").innerHTML = x + y; // 11
     document.getElementById("ex2").innerHTML = 
-    "x";
-=======
->>>>>>> 7f8fbd54f711140ca468a2e60cf61928c8f184d4
+    "x"; // 6
 </script>
 ````
 
@@ -182,8 +179,8 @@ document.getElementById("ex").innerHTML = 1 + 1 + "1";
 var lastname, lastName
 lastname = "ex2"
 lastName = "ex3"
-document.getElementById("ex2").innerHTML = lastname;
-document.getElementById("ex3").innerHTML = lastName;
+document.getElementById("ex2").innerHTML = lastname; //ex2
+document.getElementById("ex3").innerHTML = lastName; //ex3
 </script>
 ````
 
@@ -196,7 +193,7 @@ document.getElementById("ex3").innerHTML = lastName;
 <p id="hj"></p>
 <script>
 var hyeonjeong = "hyeonjeong", favorite = "cheese";
-document.getElementById("hj").innerHTML = favorite;
+document.getElementById("hj").innerHTML = favorite; //cheese
 </script>
 ````
 
@@ -258,6 +255,3 @@ var favorite = ["떡볶이", "감자칩", "디자인", "행복"];
 document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 </script>
 ````
-=======
-- 대소문자를 구분하여 사용한다
->>>>>>> 7f8fbd54f711140ca468a2e60cf61928c8f184d4
