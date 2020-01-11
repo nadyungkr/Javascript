@@ -146,7 +146,7 @@ console.log(1 + 1);
     x = 6;
     y = 5;
     document.getElementById("ex").innerHTML = x;
-        document.getElementById("example").innerHTML = x + y;
+    document.getElementById("example").innerHTML = x + y;
 </script>
 ````
 
