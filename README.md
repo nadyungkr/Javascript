@@ -303,3 +303,16 @@ document.getElementById("example").innerHTML = Hyeonjeong.fullName;
 5. ""로 된 비어있는 **문자열**은 유효한 값과 유형을 갖는다.
 
 
+## funtions
+
+1. Function Declarations  
+> function functionName(parameters) {  
+  // 실행할 코드
+}
+
+
+2. Function Expressions  
+> var x = function (a, b) {return a * b};  
+> 함수는 식을 사용하여 정의할 수 있다.
+> var x = function (a, b) {return a * b};
+> var z = x(4, 3);
