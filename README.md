@@ -137,9 +137,8 @@ console.log(1 + 1);
     </script>
 ````
 
-- x는 변수로서 정의되며 x에 6이라는 값이 할당된다
 - JavaScript에서 연산자는 변수에 값을 할당하는 데 사용된다.
-- 변수선언은 var를 사용한다 (variable의 약자)
+- 변수선언은 var를 사용한다 (variable의 약자) //아래 설명 추가
 - 자바스크립트에서 표현식은 값으로 계산된다
 - 자바스크립트 블록을 코드 블록으로 그룹화가 가능하다
 - . 연산자 또는 쉼표뒤에 코드 행을 끊을 수 있다
@@ -173,6 +172,8 @@ console.log(1 + 1);
 - 2 + 2 + "2" + 2 + 1 은 4221이다
 - "I am" + "happy"는 I amhappy이다(띄어쓰기도 같이)
 - string은 "" '' 잘못 매치 되지 않기만 하면 ""로 ''를 감쌀 수 있다.
+- 자주 사용하는 이스케이프 문자 |t 수평탭 |n줄바꿈 |'작은따옴표 |"큰따옴표 ||역슬래시
+- 작은 따옴표 안에 또 작은 따옴표가 들어가야 한다면 '내용 |'내용|' 내용'
 - 대소문자를 구분하여 사용한다
 ````html
 <p id="ex"></p>
@@ -204,7 +205,7 @@ document.getElementById("hj").innerHTML = favorite; //cheese
 - 변수를 재선언할 수 있다
 - 값을 주지 않고 선언할 경우 그 값은 undefined
 - +(덧셈), -(뺄셈), *(곱셈), /(나눗셈), %(나머지) 산수가 가능하다
-- 복합대입 연산자와 증강연산자
+- 복합대입연산자와 단항연산자
 ````html
 <head>
 var num = 10 ;
@@ -219,9 +220,10 @@ document.getElementById("ex1").innerHTML = x; //15
 </head>
 <body>
   <pre>
-  > 변수는 복합 대입 연산자와 증강 연산자 사용할 수 있다.
 
-  > 복합 대입 연산자
+  > 복합대입연산자
+  연산자: +=, -=, *=, /=, %=
+  피연산자: 문자, 숫자
 
   += 기존 변수의 값에 값을 더한다.
   -= 기존 변수의 값에 값을 뺀다.
@@ -229,11 +231,22 @@ document.getElementById("ex1").innerHTML = x; //15
   /= 기존 변수의 값에 값을 나눈다.
   %= 기존 변수의 값에 나머지를 구한다.
 
-  > 증강 연산자
+  >  단항연산자
+  연산자: ++, --  
+  피연산자: 변수(숫자)
   변수++ 기존의 변수 값에 1을 더한다. (후위)
   ++변수 기존의 변수 값에 1을 더한다. (전위)
   변수-- 기존의 변수 값에 1을 뺀다. (후위)
   --변수 기존의 변수 값에 1을 뺀다. (전위)
+
+  > 비교연산자
+  연산자:
+  <,>,<=,>=,==(같다)
+  !=(다르다)
+  ===(데이터 형식까지 같다)
+  !==(데이터 형식까지 다르다)
+  피연산자: 숫자, 문자
+
   </pre>
   <p id="ex1"></p>
   <p id="ex2"></p>
@@ -241,8 +254,23 @@ document.getElementById("ex1").innerHTML = x; //15
   <p id="ex4"></p>
   <p id="ex5"></p>
 </body>
-````
-  
+````  
+
+## 키워드
+break, else, instanceof, true, case, false, new. try, catch, finally, null, typeof, continue, for, return, var, defalut, function, switch, void, delete, if this, while, do, in, throw, with
+
+
+## 식별자 규칙
+1. 숫자로 시작하면 안된다. //alpha10 간,ㅇ 10alpha 불가능
+2. 공백 표시 안된다. alp ha 불가능
+3. 소문자로 만든다. ALPHA 불가능
+4. 사용가능한 특수문자 _와 $만 가능하다. _alpha 가능, $alpha 가능
+5. 키워드, 예약어 사용 X //break, do, while 불가능
+6. 한글, 일본어, 한자 다 되지만 알파벳 쓰는 것이 관례
+7. 의미없는 단어가 아닌 input output처럼 관계성이 있는 것 사용 권장
+8. 생성자 함수 이름은 항상 **대문자**로 시작
+9. 변수와 인스턴스, 함수, method 이름은 항상 **소문자**로 시작
+
 ## Array
 
 1. Array는 배열이라는 뜻을 가지고 있다.
@@ -279,7 +307,7 @@ document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 ````html
 <p id="example"></p>//Park HyeonJeong
 <script>
-var Hyeonjeong = {
+var hyeonjeong = {
 firstName: "Park",
 lastName: "HyeonJeong",
 fullName: function() {
@@ -287,14 +315,14 @@ fullName: function() {
   }
 };
 //display data from the object :
-document.getElementById("example").innerHTML = Hyeonjeong.fullName();
+document.getElementById("example").innerHTML = hyeonjeong.fullName();
 //() 없이 작성할 경우 함수의 정의는 그대로 반환된다.
-document.getElementById("example").innerHTML = Hyeonjeong.fullName;
+document.getElementById("example").innerHTML = hyeonjeong.fullName;
 /*function() {return this.firstName + " " + this.lastName;} 이대로 나타나게 된다*/
 </script>
 ````
 
-## typeof
+## typeof 자료형
 
 1. typeof는 변수 또는 표현식의 유형을 알려준다.
 
