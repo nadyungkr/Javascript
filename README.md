@@ -263,11 +263,11 @@ break, else, instanceof, true, case, false, new. try, catch, finally, null, type
 
 
 ## 식별자 규칙
-1. 숫자로 시작하면 안된다. //alpha10 간,ㅇ 10alpha 불가능
+1. 숫자로 시작하면 안된다. /*alpha10 가능, 10alpha 불가능*/
 2. 공백 표시 안된다. alp ha 불가능
 3. 소문자로 만든다. ALPHA 불가능
-4. 사용가능한 특수문자 _와 $만 가능하다. _alpha 가능, $alpha 가능
-5. 키워드, 예약어 사용 X //break, do, while 불가능
+4. 사용가능한 특수문자 _와 $만 가능하다. /*_alpha 가능, $alpha 가능*/
+5. 키워드, 예약어 사용 X /*break, do, while 불가능*/
 6. 한글, 일본어, 한자 다 되지만 알파벳 쓰는 것이 관례
 7. 의미없는 단어가 아닌 input output처럼 관계성이 있는 것 사용 권장
 8. 생성자 함수 이름은 항상 **대문자**로 시작
