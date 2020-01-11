@@ -155,8 +155,11 @@ console.log(1 + 1);
     y = 5;
     document.getElementById("ex").innerHTML = x;
     document.getElementById("example").innerHTML = x + y;
+<<<<<<< HEAD
     document.getElementById("ex2").innerHTML = 
     "x";
+=======
+>>>>>>> 7f8fbd54f711140ca468a2e60cf61928c8f184d4
 </script>
 ````
 
@@ -186,6 +189,7 @@ document.getElementById("ex3").innerHTML = lastName;
 
 
 - 주석은 // 를 사용하여 표현한다
+<<<<<<< HEAD
 - 여러줄은 /**/을 사용한다
 - 하나의 명령문으로 많은 변수를 선언 가능하다
 ````html
@@ -254,3 +258,6 @@ var favorite = ["떡볶이", "감자칩", "디자인", "행복"];
 document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 </script>
 ````
+=======
+- 대소문자를 구분하여 사용한다
+>>>>>>> 7f8fbd54f711140ca468a2e60cf61928c8f184d4
