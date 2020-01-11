@@ -208,6 +208,7 @@ document.getElementById("hj").innerHTML = favorite; //cheese
 - 복합대입연산자와 단항연산자
 ````html
 <head>
+  <script>
 var num = 10 ;
 document.getElementById("ex2").innerHTML = num++; //10
 document.getElementById("ex3").innerHTML = num++; //11
@@ -217,6 +218,7 @@ document.getElementById("ex5").innerHTML = ++num; //14
 var x = 10;
 x += 5;
 document.getElementById("ex1").innerHTML = x; //15
+  </script>
 </head>
 <body>
   <pre>
