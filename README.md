@@ -255,3 +255,51 @@ var favorite = ["떡볶이", "감자칩", "디자인", "행복"];
 document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 </script>
 ````
+
+
+
+## Object  
+
+1. object는 array와 달리 순서는 중요하지 않다.
+
+2. 변수에 입력할 값을 { }이 괄호 안에 작성한다.
+
+3. 한 줄에도 작성할 수 있고 여러 줄에도 작성할 수 있다.
+
+4. property를 변수명.property와 변수명["property"]로 쓸 수 있다.
+
+5. 객체에 () 없이 접근하면 함수 정의가 반환된다.
+
+
+### example
+````html
+<p id="example"></p>//Park HyeonJeong
+<script>
+var Hyeonjeong = {
+firstName: "Park",
+lastName: "HyeonJeong",
+fullName: function() {
+  return this.firstName + " " + this.lastName;
+  }
+};
+//display data from the object :
+document.getElementById("example").innerHTML = Hyeonjeong.fullName();
+//() 없이 작성할 경우 함수의 정의는 그대로 반환된다.
+document.getElementById("example").innerHTML = Hyeonjeong.fullName;
+/*function() {return this.firstName + " " + this.lastName;} 이대로 나타나게 된다*/
+</script>
+````
+
+## typeof
+
+1. typeof는 변수 또는 표현식의 유형을 알려준다.
+
+2. typeof 0 은 number
+
+3. typeof "김"은 string
+
+4. 값이 없는 변수의 데이터 유형은 undefined이다.
+
+5. ""로 된 비어있는 **문자열**은 유효한 값과 유형을 갖는다.
+
+
