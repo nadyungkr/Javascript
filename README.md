@@ -285,7 +285,7 @@ break, else, instanceof, true, case, false, new. try, catch, finally, null, type
 ````html
 <p id="fa"></p>
 <script>
-var favorite = ["떡볶이", "감자칩", "디자인", "행복", "감사"];
+var favorite = ["떡볶이", "감자칩", "디자인", "행복"];
 document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 </script>
 ````
