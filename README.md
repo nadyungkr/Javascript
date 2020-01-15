@@ -187,7 +187,6 @@ document.getElementById("ex3").innerHTML = lastName; //ex3
 
 
 - 주석은 // 를 사용하여 표현한다
-<<<<<<< HEAD
 - 여러줄은 /**/을 사용한다
 - 하나의 명령문으로 많은 변수를 선언 가능하다
 ````html
