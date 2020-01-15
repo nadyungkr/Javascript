@@ -175,6 +175,7 @@ console.log(1 + 1);
 - 자주 사용하는 이스케이프 문자 |t 수평탭 |n줄바꿈 |'작은따옴표 |"큰따옴표 ||역슬래시
 - 작은 따옴표 안에 또 작은 따옴표가 들어가야 한다면 '내용 |'내용|' 내용'
 - 대소문자를 구분하여 사용한다
+- 예외도 있지만 일반적으로는 하나의 변수에 한가지의 자료형만 들어갈 수 있다.
 ````html
 <p id="ex"></p>
 <p id="ex2"></p>
@@ -340,16 +341,103 @@ document.getElementById("example").innerHTML = hyeonjeong.fullName;
 5. ""로 된 비어있는 **문자열**은 유효한 값과 유형을 갖는다.
 
 
-## funtions
+## if
 
-1. Function Declarations  
-> function functionName(parameters) {  
-  // 실행할 코드
+
+
+
+### example
+````javascript
+var name = "관리자"
+var wifi = "둥이"
+
+if(조건식){
+  //조건식이 참일 경우에만 실행
 }
 
 
-2. Function Expressions  
-> var x = function (a, b) {return a * b};  
-> 함수는 식을 사용하여 정의할 수 있다.
-> var x = function (a, b) {return a * b};
-> var z = x(4, 3);
+if(name == "관리자"){
+  //관리자 일때만
+  document.write(" 저는 관리자 입니다.")
+
+}
+
+if(name == "관리자"){
+  //관리자 일때만
+}
+else if(wifi == "둥이"){
+  //둥이일때만
+}
+else{
+  //관리자도 아니고 둥이도 아닐때
+}
+//하나의 if문에 들어가면 뒤의 else if나 else는 실행하지 않음
+
+if(name == "관리자" && wifi == "둥이"){
+  //관리자이면서 둥이일때
+}
+
+if(name == "관리자" || wifi == "둥이"){
+  //관리자일때 또는 둥이일때 
+}
+
+
+if(name == "관리자"){
+
+  if(wifi == "둥이"){
+
+  }
+  else
+  {
+  
+  }
+
+}
+````
+
+### swtich문
+````javascript
+var age = 25;
+
+switch(age){
+  case 15:
+  //age가 15이면
+  break;
+
+  case 20:
+  //age가 20이면
+  break;
+
+  case 25:
+  //age가 25이면
+  break;
+
+  case 30:
+  //age가 30이면
+  break;
+}
+//현재 age가 25이기때문에 case 25를 실행한다.
+ ````
+
+ ### 반복문
+ ````javascript
+
+var num = 1;
+
+while(조건식){
+  //조건이 참이면 실행
+}
+
+while(num<10){
+  
+
+  num++
+}
+
+for(var i = 0 ; i < 10 ; i++){
+
+
+
+}
+
+ ````
