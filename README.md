@@ -22,7 +22,7 @@
 
 5. javascript 라는 추가의 폴더를 불러와서  
 
-### example
+### :cake: example
 
 ````html
 <!DOCTYPE html>
@@ -75,7 +75,7 @@ function myFunction() {
 4. 브라우저 콘솔에 작성한다  
 
 
-### example
+### :cake: example
 
 ````html
 <script>
@@ -121,7 +121,7 @@ console.log(1 + 1);
 
 8. 대소문자 구별  
 
-### example
+### :cake: example
 
 - 명령문은 브라우저에 대한 명령이다
 - 자바스크립트의 코드는 일련의 명령문이다
@@ -279,7 +279,7 @@ break, else, instanceof, true, case, false, new. try, catch, finally, null, type
 
 3. 첫번째 항목은 [0]이다.
 
-### example
+### :cake: example
 ````html
 <p id="fa"></p>
 <script>
@@ -303,7 +303,7 @@ document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 5. 객체에 () 없이 접근하면 함수 정의가 반환된다.
 
 
-### example
+### :cake: example 
 ````html
 <p id="example"></p>//Park HyeonJeong
 <script>
@@ -348,7 +348,7 @@ document.getElementById("example").innerHTML = hyeonjeong.fullName;
     else if (condition2) {} // block of code to be executed if the condition1 is false and condition2 is true
     else {} //block of code to be executed if the condition1 is flase and condition2 is false 
 
-### example
+### :cake: example
 ````javascript
 var name = "관리자"
 var wifi = "둥이"
@@ -395,7 +395,7 @@ if(name == "관리자" || wifi == "둥이"){
 14. **피연산자가 동일한 유형**인 경우에만 엄격한 비교(===)가 가능함
 
 
-### example
+### :cake: example
 ````javascript
 var age = 25;
 
@@ -446,7 +446,7 @@ switch (x) {
  1. switch에서 점프 하는 기능
  2. loop를 뛰어넘기 위해 사용
 
-### example
+### :cake: example
 ````javascript
 var text = "" ;
 var i;
@@ -467,7 +467,7 @@ document.getElementById("example").innerHTML = text;
  2. 지정된 조건에 해당하는만큼 코드 블록을 반복함
  3. while (condition) {} // code block to be executed
 
- ### example
+ ### :cake: example
  ````javascript
 
 var i = 1;
@@ -513,7 +513,7 @@ The number is 9
 10. 명령문 2을 생략하려면 루프 내부에 break를 제공해야함. 그렇지 않으면 루프가 끝나지 않음. 브라우저가 다운되게 됨
 11. 명령문 3은 종종 초기 변수 값을 증가 시킴. 명령문 3은 선택사항이며 음수 증분(i--), 양수 증분 (i=i + 15) 또는 기타 다른 작업도 수행이 가능. 루프 내에서 값을 증가시킬 때와 같이 명령문 3도 생략이 가능
 
-### example
+### :cake: example
 ````javascript
 for(var i = 0 ; i < 5 ; i++){
     text += "the number is" + i + "<br>";
