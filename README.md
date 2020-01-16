@@ -537,6 +537,30 @@ the number is 3
 the number is 4까지만 실행되고 5부터는 루프 밖으로 나가게 됨
 */
 
- ````
+````
+문서 객체 배열 사용과 반복문 예제
+````html
+<head>
+  <script>
+      window.onload = function(){
+          //변수 headers 만들고 태그이름 h1 가지고 오기
+          var headers = document.getElementsByTagName('h1');
+          //headers[0].innerHTML = "1 h1()";
+          //headers[1].innerHTML = "2 h1()"; 아래 for문과 같이 작성할 수 있다.
+          for(var i=0; i < headers.length; i++){
+              headers[i].innerHTML = (i+1)+"h1";
 
+          }
+      };
+  </script>
+</head>
+<body>
+    <h1>제목1</h1>
+    <h1>제목2</h1>
+    <h1>제목3</h1>
+    <h1>제목4</h1>
+    <h1>제목5</h1>
+    <h1>제목6</h1>
+</body>
+````
  

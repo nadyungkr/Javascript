@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript와 J-query를 쉽게 불러오는 방법</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        window.onload = function (){
+            var header1 = document.getElementById("heading-1"); //변수를 만들어서 ID 지정해서 불러오는 걸 간단하게 작성한다.
+            //document.getElementById("heading-1").innerHTML = "with getElemntById()" };
+            header1.innerHTML = "with getElementById(1)"};
+
+        $(document).ready(function(){
+            $("#heading-2").html("with getElementById2");
+            $("#heading-3").text("with getElementById3");
+        });
+        //text 태그는 html 태그를 인식하지 않는다
+    </script>
+</head>
+<body>
+    <h1 id="heading-1">제목1</h1>
+    <h1 id="heading-2">제목2</h1>
+    <h1 id="heading-3">제목3</h1>
+</body>
+</html>
