@@ -554,7 +554,9 @@ the number is 4까지만 실행되고 5부터는 루프 밖으로 나가게 됨
 </body>
 ````
  
-## javascript로 style 지정 방법 (예제)
+### example 
+javascript로 style 지정 방법
+````html
 <head>
   <title>Document</title>
   <script>
@@ -570,3 +572,4 @@ the number is 4까지만 실행되고 5부터는 루프 밖으로 나가게 됨
 <body>
     <h1 id="header">제목1</h1>
 </body>
+````
