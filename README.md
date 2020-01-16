@@ -10,9 +10,11 @@
 
 ## Javascript를 작성할 수 있는 곳
 
-1. HTML 안에 <head>  
+1. HTML 안에 head (자바스크립트를 바로 실행할 때)
 
-2. HTML 안에 <body>  
+2. HTML 안에 body (body안에 태그를 작성하고 그 태그에 대해 자바스크립트를 실행할 때)  
+
+// html 은 마크업한 순서가 중요하기 때문에 head와 body를 잘 구분해서 쓸 것 !
 
 3. javascript 라는 file에서 불러와서 
 
@@ -341,34 +343,36 @@ document.getElementById("example").innerHTML = hyeonjeong.fullName;
 5. ""로 된 비어있는 **문자열**은 유효한 값과 유형을 갖는다.
 
 
-## if
-
-
-
+## if문 (조건문)
+1. if를 사용하여 지정된 조건에 해당하면 코드 블록을 실행할 수 있도록 지정할 수 있음
+2. else를 사용하여 같은 조건이 거짓인 경우에는 코드 블록을 실행할 수 있도록 지정할 수 있음
+3. else if 사용은 첫번째 조건이 false인 경우, 새로운 조건을 지정할 때
+4. switch를 많이 실행해야 하는 경우 대체로 사용 됨
+5. 문법은 if (condition) {} 으로 사용됨
+6. if는 소문자로 사용해야 함. If 또는 IF는 오류를 생성함 
+7. if (condition) {} //block of code to be executed if the condition is true
+    else {} //block of code to be  executed if the condition is false
+8. if (condition1) {} //block of code to be executed if the condtion1 is true
+    else if (condition2) {} // block of code to be executed if the condition1 is false and condition2 is true
+    else {} //block of code to be executed if the condition1 is flase and condition2 is false 
 
 ### example
 ````javascript
 var name = "관리자"
 var wifi = "둥이"
 
-if(조건식){
-  //조건식이 참일 경우에만 실행
-}
-
-
 if(name == "관리자"){
   //관리자 일때만
-  document.write(" 저는 관리자 입니다.")
-
+  document.write("저는 관리자 입니다.")
 }
 
 if(name == "관리자"){
   //관리자 일때만
 }
-else if(wifi == "둥이"){
+  else if(wifi == "둥이"){
   //둥이일때만
 }
-else{
+  else{
   //관리자도 아니고 둥이도 아닐때
 }
 //하나의 if문에 들어가면 뒤의 else if나 else는 실행하지 않음
@@ -380,22 +384,26 @@ if(name == "관리자" && wifi == "둥이"){
 if(name == "관리자" || wifi == "둥이"){
   //관리자일때 또는 둥이일때 
 }
-
-
-if(name == "관리자"){
-
-  if(wifi == "둥이"){
-
-  }
-  else
-  {
-  
-  }
-
-}
 ````
 
-### swtich문
+## Switch (조건문)
+1. switch문은 다른 조건에 따라 다른 작업을 수행하는데 사용됨
+2. switch문은 한번 평가 됨
+3. 표현식의 값은 각 사례의 값과 비교됨
+4. 일치하는 코드가 있으면 관련 코드 블록이 실행됨
+5. javascript가 break 키워드에 도달하면 스위치 블록에서 빠져나옴 //블록내부 실행 중지
+6. 마지막 사례에서 break 를 할 필요는 없음. 어차피 끊어지게 됨.
+7. default가 switch 블록의 마지막이 아니라면 default에도 break를 해주어야 함
+8. 공동 코드 블록을 사용할 수 있음.
+9. 여러 사례가 사례 값과 일치하면 첫번째 사례가 선택 됨 // 이미 들어가버리면 끝
+10. 일치하는 사례가 없으면 프로그램은 기본 레이블로 계속 진행됨
+11. 기본 레이블이 없으면 프로그램은 전환 후에 명령문을 계속해서 진행
+12. switch case는 (===)를 사용함
+13. 값이 일치하려면 **동일한 유형**이어야 함
+14. **피연산자가 동일한 유형**인 경우에만 엄격한 비교(===)가 가능함
+
+
+### example
 ````javascript
 var age = 25;
 
@@ -404,40 +412,129 @@ switch(age){
   //age가 15이면
   break;
 
-  case 20:
-  //age가 20이면
-  break;
-
   case 25:
   //age가 25이면
   break;
-
-  case 30:
-  //age가 30이면
-  break;
 }
 //현재 age가 25이기때문에 case 25를 실행한다.
+
+switch(new Date().getDay)){
+  case 4:
+  case 5:
+    text = "soon it is weekend";
+    break;
+  case 0:
+  case 6:
+    text = "It is Weekend";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}
+// 4와 5는 동일한 코드 블록을 공유하고, 0과 6도 코드 블록을 공유
+
+var x = "0";
+switch (x) {
+  case 0:
+    text = "0ff";
+    break;
+  case 1:
+    text = "0n";
+    break;
+  default :
+    text = "No value found";
+
+}
+
+/*이 경우에서는 x와 일치 하지 않음 그래서 기본 값인 No value found가 나오게 됨 
+"0" 은 string, case 0: 이 뜻은 case가 숫자 0일때 라는 뜻이므로
+동일한 유형이 아니라 엄격한 비교가 불.가.능 */
  ````
 
- ### 반복문
+ ## Break와 더 자세히 알아보기
+ 1. switch에서 점프 하는 기능
+ 2. loop를 뛰어넘기 위해 사용
+
+### example
+````javascript
+var text = "" ;
+var i;
+for (i = 0; i < 10; i++){
+  if (i===3) {break;}
+  text += "The number is" + i + "<br>";
+}
+document.getElementById("example").innerHTML = text;
+// html 태그에 id 에 example을 줬다고 가정하면
+//The numeber is 0
+//The number is 1
+//The number is 2
+
+````
+
+ ## while(반복문)
+ 1. 지정된 조건이 true 라면 loop는 코드 블록을 실행할 수 있음
+ 2. 지정된 조건에 해당하는만큼 코드 블록을 반복함
+ 3. while (condition) {} // code block to be executed
+
+ ### example
  ````javascript
 
-var num = 1;
+var i = 1;
 
 while(조건식){
   //조건이 참이면 실행
 }
 
-while(num<10){
-  
-
-  num++
+while(i < 10) {
+  text += "The number is" + i;
+  i++;
 }
+//변수 (i)가 10보다 작으면 루프의 코드가 계속 반복해서 실행됨
+/*
+The number is 0
+The number is 1
+The number is 2
+The number is 3
+The number is 4
+The number is 5
+The number is 6
+The number is 7
+The number is 8
+The number is 9
+*/
+//조건에 사용된 변수를 늘리는것을 잊어버리면 이 loop는 계속 끝나지 않을 것이고 browser가 다운됨
+````
 
-for(var i = 0 ; i < 10 ; i++){
 
+## for(반복문)
+1. 매번 다른 값으로 동일한 코드를 반복해서 실행하려면 loop가 필요함
+2. 배열로 작업할 때도 많이 쓰임
+3. for 반복문은 코드 블록을 여러번 반복함
+4. for 루프의 구문은 
+  for (statement 1; statement 2; statement 3){
+    //code block to be executed
+  }
+5. 명령문 1은 코드 블록을 실행하기 전에 **한 번** 실행됨
+6. 명령문 2는 코드 블록을 실행하기 위한 **조건을 정의**
+7. 코드 블록이 실행 된 후 **(매번) 명령문 3이 실행됨**
+8. 일반적으로 명령문 1을 사용하여 루프에 사용된 변수를 초기화 함(i=0) 항상 그런것은 아니지만 명령문 1은 선택 사항이며 많은 값을 시작할 수 있음. 쉼표로 구분이 가능하다
+9. 명령문 2는 종종 조기 변수의 조건을 평가하는데 사용됨 명령문 2도 선택사항이며 true를 반환하면 루프가 다시 시작되고 false를 반환하면 루프가 종료됨.
+10. 명령문 2을 생략하려면 루프 내부에 break를 제공해야함. 그렇지 않으면 루프가 끝나지 않음. 브라우저가 다운되게 됨
+11. 명령문 3은 종종 초기 변수 값을 증가 시킴. 명령문 3은 선택사항이며 음수 증분(i--), 양수 증분 (i=i + 15) 또는 기타 다른 작업도 수행이 가능. 루프 내에서 값을 증가시킬 때와 같이 명령문 3도 생략이 가능
 
-
+### example
+````javascript
+for(var i = 0 ; i < 5 ; i++){
+    text += "the number is" + i + "<br>";
 }
+// 명령문 1은 루프가 시작되기 전 변수를 설정 (var i = 0)
+// 명령문 2는 루프 실행 조건을 정의 (i는 10보다 작다)
+// 명령문 3은 루프의 코드블록이 실행될 떄마다 값 (i++) 을 증가시킴 
+/*
+the number is 0
+the number is 1
+the number is 2
+the number is 3
+the number is 4까지만 실행되고 5부터는 루프 밖으로 나가게 됨
+*/
 
  ````
