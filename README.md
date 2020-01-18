@@ -693,8 +693,7 @@ setInterval()|일정 시간마다 지정된 명령을 반복 호출
 객체|설명
 |----------|--------------------------------|
 window 객체|웹 브라우저 창을 위한 속성과 메소드를 제공<br>하위 객체: Document, Frame, History, Location 객체
-Documnet 객체|웹 브라우저에 실행되는 HTML 문서의 본문(BODY) 정보를 관리<br>
-하위 객체: Anchor, Area, Form, Image, Layer, Link 객체
+Documnet 객체|웹 브라우저에 실행되는 HTML 문서의 본문(BODY) 정보를 관리<br>하위 객체: Anchor, Area, Form, Image, Layer, Link 객체
 Frame 객체|HTML 문서의 프레임 정보를 제공
 History 객체|웹 브라우저의 히스토리 정보를 이용하여 이동
 Location 객체|웹 브라우저 주소표시줄의 URL 주소 정보를 제공
