@@ -183,20 +183,10 @@ console.log(1 + 1);
     var x;
     x = 6;
     y = 5;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     document.getElementById("ex").innerHTML = x;
     document.getElementById("example").innerHTML = x + y;
     document.getElementById("ex2").innerHTML = 
     "x";
-=======
-<<<<<<< HEAD
->>>>>>> c300f01... merge를 해결하고 싶은 나
-=======
->>>>>>> 113b739... 충돌 두가지 사항 모두 저장
-=======
->>>>>>> 113b739ec24c9987df7ea620ed7b6cc3dadb67e8
     document.getElementById("ex").innerHTML = x; // 6
     document.getElementById("example").innerHTML = x + y; // 11
     document.getElementById("ex2").innerHTML = 
@@ -235,19 +225,7 @@ document.getElementById("ex3").innerHTML = lastName; //ex3
 
 
 - 주석은 // 를 사용하여 표현한다
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - 대소문자를 구분하여 사용한다
-=======
->>>>>>> 2fb6095... pull push 충돌 해결
-=======
->>>>>>> c300f01... merge를 해결하고 싶은 나
-=======
->>>>>>> 47667a8... merge 2일째 해결 중
-=======
->>>>>>> 113b739ec24c9987df7ea620ed7b6cc3dadb67e8
 - 여러줄은 /**/을 사용한다
 - 하나의 명령문으로 많은 변수를 선언 가능하다
 ````html
