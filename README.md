@@ -121,8 +121,10 @@ console.log(1 + 1);
 
 ### example
 
+- 명령문은 브라우저에 대한 명령이다
+- 자바스크립트의 코드는 일련의 명령문이다
 - 숫자는 정수, 소수를 모두 사용 가능
-- string 문자는 "" 따옴표를 사용하여 작성
+- string 문자는 "" 나 ''를 사용하여 작성
 ````html
     <p id="example"></p>
     <script>
@@ -137,9 +139,15 @@ console.log(1 + 1);
 
 - x는 변수로서 정의되며 x에 6이라는 값이 할당된다
 - JavaScript에서 연산자는 변수에 값을 할당하는 데 사용된다.
+- 변수선언은 var를 사용한다 (variable의 약자)
 - 자바스크립트에서 표현식은 값으로 계산된다
+- 자바스크립트 블록을 코드 블록으로 그룹화가 가능하다
+- . 연산자 또는 쉼표뒤에 코드 행을 끊을 수 있다
+- 명령문은 세미콜론 ; 으로 구분한다
+- 한줄에 여러 명령문이 허용된다
 ````html
 <p id="ex"></p>
+<p id="ex2"></p>
 <p id="example">></p>
 <script>
     var x;
@@ -147,18 +155,103 @@ console.log(1 + 1);
     y = 5;
     document.getElementById("ex").innerHTML = x;
     document.getElementById("example").innerHTML = x + y;
+    document.getElementById("ex2").innerHTML = 
+    "x";
 </script>
 ````
 
 - 연산도 가능하다
-- 1 + 1 + "1"은 21이다
+- (1 + 1) + "1"은 21이다
+- "5" + 2 + 1 은 521이다
+- "5" + (2 + 1) 은 53이다
+- 2 + "2" + (2 + 1)은 223이다
+- 2 + "2" + 2 + 1 은 2221이다
+- 2 + 2 + "2" + 2 + 1 은 4221이다
+- "I am" + "happy"는 I amhappy이다(띄어쓰기도 같이)
+- string은 "" '' 잘못 매치 되지 않기만 하면 ""로 ''를 감쌀 수 있다.
+- 대소문자를 구분하여 사용한다
 ````html
 <p id="ex"></p>
+<p id="ex2"></p>
+<p id="ex3"></p>
 <script>
-document.getElementById("ex").innerHTML = 1+1+"1";
+document.getElementById("ex").innerHTML = 1 + 1 + "1";
+var lastname, lastName
+lastname = "ex2"
+lastName = "ex3"
+document.getElementById("ex2").innerHTML = lastname;
+document.getElementById("ex3").innerHTML = lastName;
 </script>
 ````
 
 
 - 주석은 // 를 사용하여 표현한다
 - 대소문자를 구분하여 사용한다
+- 여러줄은 /**/을 사용한다
+- 하나의 명령문으로 많은 변수를 선언 가능하다
+````html
+<p id="hj"></p>
+<script>
+var hyeonjeong = "hyeonjeong", favorite = "cheese";
+document.getElementById("hj").innerHTML = favorite;
+</script>
+````
+
+- 변수를 재선언할 수 있다
+- 값을 주지 않고 선언할 경우 그 값은 undefined
+- +(덧셈), -(뺄셈), *(곱셈), /(나눗셈), %(나머지) 산수가 가능하다
+- 복합대입 연산자와 증강연산자
+````html
+<head>
+var num = 10 ;
+document.getElementById("ex2").innerHTML = num++; //10
+document.getElementById("ex3").innerHTML = num++; //11
+document.getElementById("ex4").innerHTML = ++num; //13
+document.getElementById("ex5").innerHTML = ++num; //14
+
+var x = 10;
+x += 5;
+document.getElementById("ex1").innerHTML = x; //15
+</head>
+<body>
+  <pre>
+  > 변수는 복합 대입 연산자와 증강 연산자 사용할 수 있다.
+
+  > 복합 대입 연산자
+
+  += 기존 변수의 값에 값을 더한다.
+  -= 기존 변수의 값에 값을 뺀다.
+  *= 기존 변수의 값에 값을 곱한다.
+  /= 기존 변수의 값에 값을 나눈다.
+  %= 기존 변수의 값에 나머지를 구한다.
+
+  > 증강 연산자
+  변수++ 기존의 변수 값에 1을 더한다. (후위)
+  ++변수 기존의 변수 값에 1을 더한다. (전위)
+  변수-- 기존의 변수 값에 1을 뺀다. (후위)
+  --변수 기존의 변수 값에 1을 뺀다. (전위)
+  </pre>
+  <p id="ex1"></p>
+  <p id="ex2"></p>
+  <p id="ex3"></p>
+  <p id="ex4"></p>
+  <p id="ex5"></p>
+</body>
+````
+  
+## Array
+
+1. Array는 배열이라는 뜻을 가지고 있다.
+
+2. 배열 인덱스는 0부터 시작한다.
+
+3. 첫번째 항목은 [0]이다.
+
+### example
+````html
+<p id="fa"></p>
+<script>
+var favorite = ["떡볶이", "감자칩", "디자인", "행복"];
+document.getElementById("fa").innerHTML = favorite[0];//떡볶이
+</script>
+````
