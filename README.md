@@ -186,6 +186,7 @@ console.log(1 + 1);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     document.getElementById("ex").innerHTML = x;
     document.getElementById("example").innerHTML = x + y;
     document.getElementById("ex2").innerHTML = 
@@ -203,6 +204,12 @@ console.log(1 + 1);
     "x"; // 6
     document.getElementById("ex").innerHTML = x;
         document.getElementById("example").innerHTML = x + y;
+=======
+    document.getElementById("ex").innerHTML = x; // 6
+    document.getElementById("example").innerHTML = x + y; // 11
+    document.getElementById("ex2").innerHTML = 
+    "x"; // 6
+>>>>>>> f14c53b... javascript 기초다지기
 </script>
 ````
 
@@ -345,6 +352,7 @@ var favorite = ["떡볶이", "감자칩", "디자인", "행복"];
 document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 </script>
 ````
+<<<<<<< HEAD
 
 
 
@@ -761,3 +769,5 @@ onChange()|대상 값을 선택 혹은 변경하는 경우
 onSelect()|문자열을 드래그 등으로 선택하는 경우
 onFocus()|대상에 포커스가 들어왔을 때
 onBlur()|대상이 포커스를 잃어버렸을 때
+=======
+>>>>>>> f14c53b... javascript 기초다지기
