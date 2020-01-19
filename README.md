@@ -353,6 +353,9 @@ document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 </script>
 ````
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e83ffdd... javascript 기초 다지기
 
 
 
@@ -369,11 +372,19 @@ document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 5. 객체에 () 없이 접근하면 함수 정의가 반환된다.
 
 
+<<<<<<< HEAD
 ### :cake: example 
 ````html
 <p id="example"></p>//Park HyeonJeong
 <script>
 var hyeonjeong = {
+=======
+### example
+````html
+<p id="example"></p>//Park HyeonJeong
+<script>
+var Hyeonjeong = {
+>>>>>>> e83ffdd... javascript 기초 다지기
 firstName: "Park",
 lastName: "HyeonJeong",
 fullName: function() {
@@ -381,14 +392,24 @@ fullName: function() {
   }
 };
 //display data from the object :
+<<<<<<< HEAD
 document.getElementById("example").innerHTML = hyeonjeong.fullName();
 //() 없이 작성할 경우 함수의 정의는 그대로 반환된다.
 document.getElementById("example").innerHTML = hyeonjeong.fullName;
+=======
+document.getElementById("example").innerHTML = Hyeonjeong.fullName();
+//() 없이 작성할 경우 함수의 정의는 그대로 반환된다.
+document.getElementById("example").innerHTML = Hyeonjeong.fullName;
+>>>>>>> e83ffdd... javascript 기초 다지기
 /*function() {return this.firstName + " " + this.lastName;} 이대로 나타나게 된다*/
 </script>
 ````
 
+<<<<<<< HEAD
 ## typeof 자료형
+=======
+## typeof
+>>>>>>> e83ffdd... javascript 기초 다지기
 
 1. typeof는 변수 또는 표현식의 유형을 알려준다.
 
@@ -400,6 +421,7 @@ document.getElementById("example").innerHTML = hyeonjeong.fullName;
 
 5. ""로 된 비어있는 **문자열**은 유효한 값과 유형을 갖는다.
 
+<<<<<<< HEAD
 ## 제어문
 종류|설명
 |------|----------------------------|
@@ -771,3 +793,6 @@ onFocus()|대상에 포커스가 들어왔을 때
 onBlur()|대상이 포커스를 잃어버렸을 때
 =======
 >>>>>>> f14c53b... javascript 기초다지기
+=======
+
+>>>>>>> e83ffdd... javascript 기초 다지기
