@@ -224,7 +224,6 @@ document.getElementById("ex3").innerHTML = lastName; //ex3
 
 
 - 주석은 // 를 사용하여 표현한다
-<<<<<<< HEAD
 - 여러줄은 /**/을 사용한다
 - 하나의 명령문으로 많은 변수를 선언 가능하다
 ````html
@@ -738,6 +737,4 @@ onChange()|대상 값을 선택 혹은 변경하는 경우
 onSelect()|문자열을 드래그 등으로 선택하는 경우
 onFocus()|대상에 포커스가 들어왔을 때
 onBlur()|대상이 포커스를 잃어버렸을 때
-=======
 - 대소문자를 구분하여 사용한다
->>>>>>> parent of 7f8fbd5... Update README.md
