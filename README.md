@@ -77,7 +77,7 @@ function myFunction() {
 
 ````html
 <script>
-document.write(1 + 1);
+document.write(1 + 1); //2로 경고창이 뜬다
 </script>
 ````
 
@@ -157,6 +157,10 @@ console.log(1 + 1);
     document.getElementById("example").innerHTML = x + y;
     document.getElementById("ex2").innerHTML = 
     "x";
+    document.getElementById("ex").innerHTML = x; // 6
+    document.getElementById("example").innerHTML = x + y; // 11
+    document.getElementById("ex2").innerHTML = 
+    "x"; // 6
 </script>
 ````
 
@@ -179,8 +183,8 @@ document.getElementById("ex").innerHTML = 1 + 1 + "1";
 var lastname, lastName
 lastname = "ex2"
 lastName = "ex3"
-document.getElementById("ex2").innerHTML = lastname;
-document.getElementById("ex3").innerHTML = lastName;
+document.getElementById("ex2").innerHTML = lastname; //ex2
+document.getElementById("ex3").innerHTML = lastName; //ex3
 </script>
 ````
 
@@ -193,7 +197,7 @@ document.getElementById("ex3").innerHTML = lastName;
 <p id="hj"></p>
 <script>
 var hyeonjeong = "hyeonjeong", favorite = "cheese";
-document.getElementById("hj").innerHTML = favorite;
+document.getElementById("hj").innerHTML = favorite; //cheese
 </script>
 ````
 
