@@ -191,7 +191,10 @@ document.getElementById("ex3").innerHTML = lastName; //ex3
 
 
 - 주석은 // 를 사용하여 표현한다
+<<<<<<< HEAD
 - 대소문자를 구분하여 사용한다
+=======
+>>>>>>> 2fb6095... pull push 충돌 해결
 - 여러줄은 /**/을 사용한다
 - 하나의 명령문으로 많은 변수를 선언 가능하다
 ````html
