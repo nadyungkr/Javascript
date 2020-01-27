@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript DOM example</title>
+</head>
+<body>
+    <p id="p0">cookie 보기</p>
+    <p id="p1">도메인</p>
+    <p id="p2">lastModified</p>
+    <p id="p3">referrer</p>
+    <p id="p4">title</p>
+    <p id="p5">full URL</p>
+    <p id="p6">Replace this document with new content</p>
+    <p id="p7">a new window and add some content</p>
+    <p id="p8">
+        Cats :
+        <input name="x" type="radio" value="cats">
+        Dogs :
+        <input name="x" type="radio" value="dogs">
+    </p>
+    <p><input type="button" onclick="getElements()" value="How many elements Named Animals?"></p>
+    <p id="p9">change</p>
+    <p id="p10">
+        <input type="text" size="20"><br/>
+        <input type="text" size="20"><br/>
+        <input type="text" size="20"><br/>
+    </p>
+    <input type="button" onclick="getElements1()" value="How many input elements?">
+    <p id="p11">change</p>
+    <button onclick="myFunction0()">쿠키 보기</button>
+    <button onclick="myFunction1()">도메인 보기</button>
+    <button onclick="myFunction2()">lastModified</button>
+    <button onclick="myFunction3()">referrer</button>
+    <button onclick="myFunction4()">title</button>
+    <button onclick="myFunction5()">URL</button>
+    <button onclick="myFunction6()">Replace this document with new content</button>
+    <button onclick="myFunction7()">open a new window</button>
+
+    <script type="text/javascript">
+        function myFunction0() {
+            document.getElementById("p0").innerHTML = 
+            "Cookies associated with this document: " + document.cookie;
+        }
+        function myFunction1() {
+            document.getElementById("p1").innerHTML = document.domain;
+        }
+        function myFunction2() {
+            document.getElementById("p2").innerHTML = document.lastModified;
+        }
+        function myFunction3() {
+            document.getElementById("p3").innerHTML = 
+            "referrer : " + document.referrer;
+        }
+        function myFunction4() {
+            document.getElementById("p4").innerHTML = 
+            "The title of this document is : " + document.title;
+        }
+        function myFunction5() {
+            document.getElementById("p5").innerHTML =
+            "The URL of this document is : " + document.URL;
+        }
+        function myFunction6() {
+            document.open("javascript DOM example.html","replace");
+            document.write("<h2>이 글자로 새로 바꿔줘!</h2>");
+            document.close();
+        }
+        function myFunction7() {
+            var w = window.open();
+            w.document.open();
+            w.document.write("<h2>Hello World!</h2>");
+            w.document.close();
+        }
+        function getElements() {
+            var x = document.getElementsByName("x");
+            document.getElementById("p9").innerHTML = x.length;
+        }
+        function getElements1() {
+            var y = document.getElementsByTagName("input");
+            document.getElementById("p11").innerHTML = y.length;
+        }
+    </script>
+</body>
+</html>
