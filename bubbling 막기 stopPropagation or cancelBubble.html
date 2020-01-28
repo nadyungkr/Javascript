@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>이벤트 전달 막기</title>
+    <style>
+        h1{
+            border:3px solid palevioletred;
+            width:1000px;
+        }
+        p{
+            border:3px solid seagreen;
+        }
+
+    </style>
+    <script>
+        /*window.onload = function(){
+            document.getElementById('header').onclick = function(){
+                alert('header');
+            };
+            document.getElementById('paragraph').onclick = function() {
+                alert('paragraph');
+            };
+        };*/
+        //이벤트 전달 제거
+        /*
+            인터넷 익스플로러 - 이벤트 객체의 cancelBubble 속성을 true로 변경 (캔슬버블)
+            그 외 브라우저 - 이벤트 객체의 stopPropagation()메서드 사용 (스탑프로퍼게이션)
+        */
+        window.onload = function() {
+            document.getElementById('header').onclick
+             = function(){
+                 alert('header');
+             };
+             document.getElementById('paragraph').onclick
+             = function(e){
+                 var event = e || window.event;
+                 alert('paragraph');
+                 // ||문법은 변수 선언에 있어서 해당하는 값이 있는 경우 앞의 값을 선언하고 없는 경우에는 두의 값을 선언하게 된다. 즉, 선언 된 e 변수 뒤의 ||는 크로스 브라우징을 위해 사용된 것으로 이벤트 객체 중 맞는 부분에 사용할 수 있게 된다.
+
+                 //이벤트 전달 제거
+                event.cancelBubble = true;
+                if(event.stopPropagation){
+                    event.stopPropagation();
+                }
+             };
+        }
+    </script>
+</head>
+<body>
+    <h1 id="header">ID가 header인 것을 클릭하면 경고창에 header를 띄워라
+        <p id="paragraph">ID가 paragraph인 것을 클릭하면 경고창에 header를 띄워라</p>
+    </h1>
+</body>
+</html>

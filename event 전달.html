@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>이벤트 전달 - 이벤트 버블링</title>
+    <style>
+        *{
+            border:3px solid palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="alert('outer-div')">
+        <div onclick="alert('inner-div')">
+            <h1 onclick="alert('header')">
+                <p onclick="alert('paragraph')">
+                    paragraph /이건웹표준아님/
+                </p>
+            </h1>
+        </div>
+    </div onclick="alert()">
+</body>
+</html>
