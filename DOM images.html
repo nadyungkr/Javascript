@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom Images</title>
+</head>
+<body>
+    <h2>Finding HTML Elements Using document.images</h2>
+    <img id="1" src="images/pic_htmltree.gif" alt="document pic_html_tree"/>
+    <img id="2" src="images/pic_navigate.gif" alt="document pic_navigate"/>
+    <p id="test"></p>
+    <p id="test2"></p>
+    <script>
+    document.getElementById("test").innerHTML = 
+    "Number of images: " + document.images.length;
+    document.getElementById("test2").innerHTML = 
+    "The id of the first image is " + document.images[0].id;
+    </script>
+</body>
+</html>
