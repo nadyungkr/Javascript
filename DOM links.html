@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM links</title>
+</head>
+<body>
+    <h2>Finding HTML Elements Using Document.links</h2>
+    <p>
+        <a href="#">상위</a>
+        <a href="#">top</a>
+        <a href="#">HOME</a>
+    </p>
+    <p id="test"></p>
+    <p id="test2"></p>
+    <script>
+    document.getElementById("test").innerHTML =
+    "Number of links: " + document.links.length;
+    document.getElementById("test2").innerHTML = 
+    "The href of the first link is " + document.links[0].href;
+    </script>
+</body>
+</html>
