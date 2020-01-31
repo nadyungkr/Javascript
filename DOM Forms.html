@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM forms</title>
+</head>
+<body>
+    <form action="" name="form0">
+        <fieldset>
+            <legend>폼1</legend>
+            <label for="userID">ID</label>
+            <input type="text" id="userID"><br/>
+            <label for="userPW">PassWord</label>
+            <input type="password" id="userPW"><br/>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <form name="form1"><fieldset><legend>폼1</legend></fieldset></form>
+    <form name="form2"><fieldset><legend>폼2</legend></fieldset></form>
+    <form name="form3"><fieldset><legend>폼3</legend></fieldset></form>
+    <p id="test"></p>
+    <p id="test2"></p>
+    <script>
+    document.getElementById("test").innerHTML =
+    "Number of forms: " + document.forms.length;
+    document.getElementById("test2").innerHTML = 
+    "The name of the first for is " + document.forms[0].name;
+    </script>
+</body>
+</html>
