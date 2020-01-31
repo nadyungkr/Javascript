@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Anchors</title>
+</head>
+<body>
+    <h2>Finding HTML Elements Using document.anchors</h2>
+    <a name="html">HTML</a><br/>
+    <a name="css">CSS</a><br/>
+    <a name="xml">XML</a><br/>
+    <p id="test"></p>
+    <button onclick="myFunction()">Try it</button>
+    <p>버튼을 누르면 anchors[0]이 실행됩니다</p>
+    <p id="test2"></p>
+    <script>
+    document.getElementById("test").innerHTML =
+    "Number of anchors are: " + document.anchors.length;
+    
+    function myFunction(){
+        document.getElementById("test2").innerHTML = 
+        document.anchors[0].innerHTML;
+    }
+    </script>
+</body>
+</html>
