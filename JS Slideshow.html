@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SlideShow</title>
+    <style>
+        body{
+            display:flex;
+            flex-flow:column wrap;
+            justify-content: center;
+            align-content:center;
+        }
+        p{
+            font-size:60px;
+            font-weight:900;
+        }
+    </style>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+<body>
+    <div>
+        <h2>SlideShow - 떡볶이 예제 1번</h2>
+        <h4>Images with class="ddeok" will be in the slideshow (w3c예제)</h4>
+        <img src="images/d1.png" alt="떡볶이" class="ddeok">
+        <img src="images/d2.png" alt="떡볶이" class="ddeok">
+        <img src="images/d3.png" alt="떡볶이" class="ddeok">
+        <img src="images/d4.png" alt="떡볶이" class="ddeok">
+        <img src="images/d5.png" alt="떡볶이" class="ddeok">
+        <img src="images/d6.png" alt="떡볶이" class="ddeok">
+    </div>
+    <div>
+        <h2>예제 2번 - button</h2>
+        <img src="images/d1.png" alt="떡볶이" class="ddeok2">
+        <img src="images/d2.png" alt="떡볶이" class="ddeok2">
+        <img src="images/d3.png" alt="떡볶이" class="ddeok2">
+        <img src="images/d4.png" alt="떡볶이" class="ddeok2">
+        <img src="images/d5.png" alt="떡볶이" class="ddeok2">
+        <img src="images/d6.png" alt="떡볶이" class="ddeok2">
+        <p>
+            <button onclick="myShow.previous()">Previous</button>
+            <button onclick="myShow.next()">Next</button>
+        </p>
+    </div>
+    <div>
+        <h2>HTML text</h2>
+        <p class="ddeok3">죠스떡볶이</p>
+        <p class="ddeok3">청년다방 떡볶이</p>
+        <p class="ddeok3">동대문 엽기 떡볶이</p>
+        <p class="ddeok3">신전 떡볶이</p>
+        <p class="ddeok3">오떡</p>
+        <p class="ddeok3">응급실 떡볶이</p>
+    </div>
+    <script>
+        w3.slideshow(".ddeok",1000);
+        myShow = w3.slideshow(".ddeok2", 0);
+        w3.slideshow(".ddeok3");
+    </script>
+</body>
+</html>
