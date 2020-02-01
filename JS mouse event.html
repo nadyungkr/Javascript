@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2 onmouseover="style.color='red'" onmouseout="style.color='black'">
+        onmouseover-out
+    </h2>
+    <h2 onmousedown="myFunction1(this,'red')" onmouseup="myFunction1(this,'green')">
+        onmousedown-up
+    </h2>
+    <div id="div" style="width:199px;height:99px;border:1px solid" onmousemove="myFunction2(event)" onmouseout="clearCoor()"></div>
+    <p>mousemove-mouseout</p>
+    <p id="test"></p>
+
+<script>
+function myFunction1(elmnt, clr) {
+    elmnt.style.color = clr;
+}
+function myFunction2(e) {
+  x = e.clientX;
+  y = e.clientY;
+  coor = "Coordinates: (" + x + "," + y + ")";
+  document.getElementById("test").innerHTML = coor
+}
+
+function clearCoor() {
+  document.getElementById("test").innerHTML = "";
+}
+</script>
+</body>
+</html>
