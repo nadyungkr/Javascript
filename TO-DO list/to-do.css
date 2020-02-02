@@ -1,0 +1,94 @@
+@font-face { font-family: 'Cafe24Oneprettynight'; 
+            src: url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff) format('woff'); 
+            font-weight: normal; 
+            font-style: normal;
+}
+
+body{
+    font-family:"Cafe24Oneprettynight", sans-serif;
+    font-size: 30px;
+    display:block;
+    z-index:1;
+    background: rgba(19, 19, 19, 0.924);
+}
+
+section {
+    width:1200px;
+    height:800px;
+    margin:0 auto;
+    padding-top:4%;
+    box-sizing: border-box;
+}
+
+div{
+    text-align:center;
+}
+
+div > h2{
+    font-size:60px;
+    padding:5% 0;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color:#fff;
+}
+
+div > input {
+    font-family: "Cafe24Oneprettynight",sans-serif;
+    font-size:22px;
+    width:60%;
+    height:50px;
+    margin-right:5%;
+    border:none;
+    text-indent: 1.5%;
+}
+
+#addBtn {
+    display:inline-block;
+    width:10%;
+    height:50px;
+    position: relative;
+    background:rgb(255, 205, 43);
+    line-height:50px;
+}
+
+#myUL {
+    font-size:20px;
+    width:80%;
+    margin:5% auto;
+    padding:2% 0;
+}
+
+#myUL li {
+    color:#222;
+    padding:2% 0;
+    text-indent:5%;
+    background:#eee;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+#myUL li:nth-child(odd){
+    background:#f9f9f9;
+}
+
+#myUL li.checked{
+    background: #ddd;
+    position:relative;
+    text-decoration-line: line-through;
+} /*우선순위 때문에 id 부여*/
+
+#myUL li:hover{
+    background: rgb(255, 227, 101);
+}
+
+#myUL .checked:before{
+    font-family:"xeicon";
+    content:"\e928";
+    width:4%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:1%;
+    line-height:55px;
+    font-size:30px;
+}
