@@ -65,6 +65,7 @@ div > input {
     background:#eee;
     font-weight:800;
     letter-spacing:1px;
+    position:relative;
 }
 
 #myUL li:nth-child(odd){
@@ -91,4 +92,16 @@ div > input {
     left:1%;
     line-height:55px;
     font-size:30px;
+}
+
+.close{
+    width:6%;
+    height:100%;
+    right:0;
+    top:0;
+    position:absolute;
+}
+
+.close:hover{
+    background:#bbb;
 }
