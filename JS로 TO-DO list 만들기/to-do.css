@@ -94,14 +94,17 @@ div > input {
     font-size:30px;
 }
 
-.close{
+#myUL .close{
+    position: absolute;
+    top:0;
+    right:0;
     width:6%;
     height:100%;
-    right:0;
-    top:0;
-    position:absolute;
 }
 
-.close:hover{
-    background:#bbb;
+#myUL .close:before{
+    font-family: "xeicon";
+    content:"\e922";
+    line-height:55px;
+    font-size:30px;
 }
