@@ -100,6 +100,9 @@ div > input {
     right:0;
     width:6%;
     height:100%;
+    outline:1px solid red;
+    text-align:center;
+    display:none;
 }
 
 #myUL .close:before{
@@ -107,4 +110,8 @@ div > input {
     content:"\e922";
     line-height:55px;
     font-size:30px;
+}
+
+#myUL li:hover .close{
+    display:block;
 }

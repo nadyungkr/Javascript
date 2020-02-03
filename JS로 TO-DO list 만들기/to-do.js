@@ -1,4 +1,5 @@
 $(document).ready(function(){
+//클릭 하면 체크 되기
     $("#myUL").on('click',"li",function(e){
         event.preventDefault();
         $(this).toggleClass('checked');
@@ -9,10 +10,6 @@ $(document).ready(function(){
         $("#myUL").append("<li>" + inputval + "</li>")
     });
 //삭제 기능 추가하기
-    $(".close").click(function(){
-        var close = $(".close");
-        close.parent().hide();
-    });
 });
 
 //add를 클릭하면 input의 val을 li 리스트로 만들기 2번째 방법
