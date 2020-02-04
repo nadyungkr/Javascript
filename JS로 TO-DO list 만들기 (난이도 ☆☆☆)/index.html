@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>to-do list</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="to-do.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <h2>to do list</h2>
+        <form action="" id="myForm">
+            <fieldset>
+                <legend class="blind">입력창</legend>
+                <input type="text" placeholder="입력하세요..." id="myInput" value="">
+                <div class="push">
+                    <button onclick="push()" id="pushList">add list</button>
+                </div>
+            </fieldset>
+        </form>
+        <div id="listContainer">
+            <div class="listItems">
+                <!--
+                <a href="#">
+                    <button onclick="addItems()" class="button-check">check</button>
+                </a>
+                <a href="#">
+                    <button onclick="editItems()" class="button-edit">edit</button>
+                </a>
+                <a href="#" >
+                    <button onclick="deleteItems()" class="button-delete">delete</button>
+                </a>
+                -->
+            </div>
+            <button id="clearList">Clear</button>
+        </div>
+    </div>
+</body>
+</html>
