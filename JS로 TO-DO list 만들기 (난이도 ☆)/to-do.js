@@ -1,31 +1,54 @@
-$(document).ready(function(){
-//클릭 하면 체크 되기
-    $("#myUL").on('click',"li",function(e){
-        event.preventDefault();
-        $(this).toggleClass('checked');
-    });
-//add를 클릭하면 input의 val을 li 리스트로 만들기
-    $("#addBtn").on('click',function(){
-        var inputval = $("#myInput").val();
-        $("#myUL").append("<li>" + inputval + "</li>")
-    });
-//삭제 기능 추가하기
-});
+var myNodelist = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var closebtn = document.createElement("span");
+  closebtn.className = "close";
+  myNodelist[i].appendChild(closebtn);
+}
 
-//add를 클릭하면 input의 val을 li 리스트로 만들기 2번째 방법
-//span에 onclick = "appendTXT()"를 추가해야한다
-/*function appendTXT() {
-    var inputval = document.getElementById("myInput").value;
-    var addli = document.createElement("li");
-    addli.innerHTML = inputval;
-    $("ul").append(addli);
-}*/
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
 
 
-//checked 추가하기
-/*$("li").on('click',function(){
-    $(this).toggleClass('checked');
-});*/
-/*이 방법을 쓰면 안되는 이유 : 동적으로 생성된 요소는 이벤트 핸들러 등록이 되지 않아서 
-(이벤트 핸들러를 구현하는 시점에 생성되어 있지 않기 때문)부모 ul에게 
-이벤트를 등록하고 클릭 이벤트가 실제 일어난 곳으로 찾아가 위임되게 해야함*/
+//이벤트 전달 ul > li로
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      document.getElementById("myUL").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+  //새로 추가하는 리스트에도 삭제버튼을 만들어줘야해
+    var closebtn = document.createElement("span");
+    closebtn.className = "close";
+    li.appendChild(span);
+  
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+  }
+  

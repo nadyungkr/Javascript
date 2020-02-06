@@ -100,7 +100,6 @@ div > input {
     right:0;
     width:6%;
     height:100%;
-    outline:1px solid red;
     text-align:center;
     display:none;
 }
