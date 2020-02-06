@@ -634,6 +634,14 @@ javascript로 style 지정 방법
   ````
 - <code>.createTextNode('My Text')</code>이라고 작성하였을 때 My text라는 문자열을 만든다.  
 - <code>.appendchild()</code>이라고 작성하였을 때 자식요소를 추가한다.
+  ````html
+  <script>
+    var btn = document.createElement("button");
+    var btncheck = document.createTextNode("check");
+    btn.appendChild(btncheck);
+    document.body.appendChild(btn);
+  </script>
+  ````
 
 ## javascript 내장함수
 - 함수(function)는 특정한 작업을 독립적으로 수행하는 단위
