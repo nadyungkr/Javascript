@@ -626,13 +626,10 @@ javascript로 style 지정 방법
 - <code>createTextNode()</code>
 - <code>appendChild()</code>
 
-### example
-<code>.createElement('h1')</code>이라고 작성하였을 때  
-<code><h1></h1></code>이라는 코드를 생성한다.  
-<code>.createTextNode('My Text')</code>이라고 작성하였을 때  
-My text라는 문자열을 만든다.  
-<code>.appendchild()</code>이라고 작성하였을 때  
-자식요소를
+### :cake: example
+- <code>.createElement('h1')</code>이라고 작성하였을 때 <code><h1></h1></code>이라는 코드를 생성한다.  
+- <code>.createTextNode('My Text')</code>이라고 작성하였을 때 My text라는 문자열을 만든다.  
+- <code>.appendchild()</code>이라고 작성하였을 때 자식요소를 추가한다.
 
 ## javascript 내장함수
 - 함수(function)는 특정한 작업을 독립적으로 수행하는 단위
