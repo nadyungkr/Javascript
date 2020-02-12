@@ -11,14 +11,30 @@
 <script>
 var i = 0;
 var txt = '매일 한 개의 커밋이 나의 스펙으로 완성 될 때까지';
-var speed = 50;
+var speed = 100;
 
-window.onload = function typing() {
-    if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typing, speed);
+window.onload = function typing() 
+{
+    if (i < txt.length) 
+    {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typing, speed);
+        //if문 안에 if문을 만들어서 i가 값이 txt의 길이와 같아질 때 값을 초기화 시켜줘서 실행되게함 (if문안의 if문)
+        if(i == txt.length) 
+        {
+            document.getElementById("demo").innerHTML = "";
+            i=0;
+            setTimeout(typing, speed);
+        }
+
     }
+    //계속 재생 시키고 싶을 때 else에 값을 초기화 해주고 함수를 지연시간을 추가해서 실행되게함(if-else를 쓰때)
+    // else {
+    // document.getElementById("demo").innerHTML = "";
+    // i=0;
+    // setTimeout(typing, speed);
+    // }
 }
 </script>
 </body>
