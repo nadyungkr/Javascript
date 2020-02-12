@@ -15,17 +15,19 @@ var speed = 100;
 
 window.onload = function typing() 
 {
-    if (i < txt.length) 
+    if (i < txt.length + 1) 
     {
         document.getElementById("demo").innerHTML += txt.charAt(i);
         i++;
         setTimeout(typing, speed);
         //if문 안에 if문을 만들어서 i가 값이 txt의 길이와 같아질 때 값을 초기화 시켜줘서 실행되게함 (if문안의 if문)
-        if(i == txt.length) 
+        if(i == txt.length + 1) 
         {
             document.getElementById("demo").innerHTML = "";
             i=0;
-            setTimeout(typing, speed);
+            //setTimeout(typing, speed); 또는 typing();을 했더니 엄청 빨리 재생되면서 지구 밖을 나가려고함....
+            //써줄 필요가 없음 if문 안의 if문이므로 위의 경우는 쓰지 않음
+            //+1을 쓰는 이유는 마지막 글자에서 초기화 되므로 디스플레이상에서 확인이 불가함. 그래서 +1을 해줘서 마지막 글자가 출력되는 순간 초기화되게 함
         }
 
     }
@@ -35,6 +37,7 @@ window.onload = function typing()
     // i=0;
     // setTimeout(typing, speed);
     // }
+    //else문을 쓸 경우 if문 옆의 +1 제거해도 됨 (이 경우에는 마지막 글자에서 초기화 되지 않으므로)
 }
 </script>
 </body>
