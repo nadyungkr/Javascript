@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown Timer</title>
+    <style>
+        body{
+            text-align:center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h2{
+            margin-top:280px;
+        }
+        p {
+            font-weight: 800;
+            font-size:50px;
+            margin-top:20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>200일까지</h2>
+    <p id="timer"></p>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 24, 2020 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() 
+{
+    //오늘날짜 기입
+    var now = new Date().getTime();
+    
+    // 지정 날짜 - 오늘 날짜
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // 결과 나타내기 
+    document.getElementById("timer").innerHTML = days + "일 " + hours + "시간 "
+    + minutes + "분 " + seconds + "초";
+    
+    // 카운트 다운이 종료 될 때
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "만료되었습니다 날짜를 갱신해주세요"";
+    }
+}, 1000);
+</script>
+</body>
+</html>
