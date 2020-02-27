@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 만들기</title>
+    <link rel="stylesheet" href="calc.css">
+    <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+    <div class="calc">
+        <div class="input-wrap">
+            <input type="text" class="input" readonly>
+        </div>
+        <div class="btn-wrap">
+            <ul>
+                <li class="btn all-clear">AC</li> <!--all clear -->
+                <li class="btn clear">C</li> <!-- clear -->
+                <li class="btn sign">+/-</li> <!--양수/음수-->
+                <li class="btn amt divide">/</li> <!--나누기--> <!--1줄-->
+                <li class="btn number num-7">7</li> 
+                <li class="btn number num-8">8</li> 
+                <li class="btn number num-9">9</li>
+                <li class="btn amt times">*</li> <!--곱하기--> <!--2줄-->
+                <li class="btn number num-4">4</li>
+                <li class="btn number num-5">5</li>
+                <li class="btn number num-6">6</li>
+                <li class="btn amt minus">-</li> <!--빼기--> <!--3줄-->
+                <li class="btn number num-1">1</li>
+                <li class="btn number num-2">2</li>
+                <li class="btn number num-3">3</li>
+                <li class="btn amt plus">+</li> <!--더하기--> <!--4줄-->
+                <li class="btn number num-0">0</li>
+                <li class="btn dot">.</li>
+                <li class="btn result">=</li> <!--마지막줄-->
+            </ul>
+        </div>
+    </div>
+    <script src="calc.js"></script>
+</body>
+</html>

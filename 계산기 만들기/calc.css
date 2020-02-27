@@ -1,0 +1,53 @@
+body{
+    font-size:26px;
+    font-weight: 900;
+    background:black;
+}
+
+.input-wrap{
+    margin:0 auto;
+    width:408px;
+}
+
+.input{
+    margin-top:50px;
+    width:406px;
+    height:100px;
+    border:2px solid black;
+}
+
+.btn-wrap{
+    margin:0 auto;
+    width:408px;
+}
+
+.btn{
+    width:100px;
+    height:100px;
+    border:1px solid black;
+}
+
+.num-0 {
+    width:202px;
+}
+
+ul{
+    display:flex;
+    flex-flow: row wrap;
+}
+
+li{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:#fff;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+li:active{
+    background:peachpuff;
+    font-size:30px;
+}
