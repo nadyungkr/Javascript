@@ -1,5 +1,5 @@
-var input = document.getElementsByClassName("input");
-var button = document.getElementsByTagName("li").innerText;
+//var input = document.getElementsByClassName("input");
+//var button = document.getElementsByTagName("li").innerText;
 
 // 어떻게 만들고 싶은가?
 // li를 클릭하면 input에 뜨게 하고 싶다
@@ -10,4 +10,7 @@ var button = document.getElementsByTagName("li").innerText;
 // 그렇다면 계산을 출력하는 칸은?
 // html에 새로 만들어야 할 것 같아
 // 이 순서대로 한번 작성해보자 
+
+
+
 
