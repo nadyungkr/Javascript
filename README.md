@@ -233,7 +233,6 @@ document.getElementById("ex3").innerHTML = lastName; //ex3
 </script>
 ````
 
-
 - 주석은 // 를 사용하여 표현한다
 - 대소문자를 구분하여 사용한다
 - 여러줄은 /**/을 사용한다
@@ -301,6 +300,32 @@ document.getElementById("ex1").innerHTML = x; //15
   <p id="ex5"></p>
 </body>
 ````  
+
+### :cake: example 문자열 더하기
+- concat 사용하기
+- concat 2번 이상 사용하기
+- +(더하기 연산자) 사용하기
+````javascript
+var str = "Hello"
+var str2 = " World"
+str.concat(str2)
+> "Hello World"
+str.concat(" World")
+> "Hello World"
+"Hello".concat(str2)
+> "Hello World"
+"Hello".concat(" World")
+> "Hello World"
+str.concat(str2).concat("!")
+> "Hello World!"
+"Hello".concat(" World").concat("!")
+> "Hello World!"
+"Pi is " + 3.14 
+> "Pi is 3.14"
+3.14 + " is Pi"
+> "3.14 is Pi"
+//숫자와 문자를 더하기 연산자를 사용하면 숫자열이 문자열로 바뀌어 문자열로 나타난다
+````
 
 ## 키워드
 break, else, instanceof, true, case, false, new. try, catch, finally, null, typeof, continue, for, return, var, defalut, function, switch, void, delete, if this, while, do, in, throw, with
