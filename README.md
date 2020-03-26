@@ -405,6 +405,62 @@ document.getElementById("example").innerHTML = hyeonjeong.fullName;
 
 5. ""로 된 비어있는 **문자열**은 유효한 값과 유형을 갖는다.
 
+## 문자열 다루기
+- 특정 위치 문자열 나타내기 (charAt 함수이용, 대괄호 사용)
+- 부분 문자열 구하기 (substring, substr 함수 이용)
+  - substring(pos1,pos2) : pos1에서 pos2까지의 부분 문자열 반환, pos2를 생략시 pos1부터 마지막까지의 문자열 반환
+  - substr(pos,length) : pos에서 length길이만큼 부분 문자열 반환, length 생략시 pos부터 마지막까지의 문자열 반환, pos가 음수인 경우 str.length - pos로 동작 
+- 문자열 검색하기 (indexOf) : 사용하는 문자열이 있는경우 해당 시작위치를 반환시켜줌
+
+### :cake: example 문자열 다루기
+````javascript
+//특정 위치 문자열 나타내기
+var str = "abcdeabcde";
+srt.charAt(0); //첫문자
+> "a"
+str.charAt(11);
+> ""
+str.length;
+> 10
+str.charAt(length-1); //마지막 문자
+> "e"
+
+//대괄호 사용하여 특정위치 문자열 나타내기
+var str = "abcdeabcde";
+str[0]; //첫문자
+> "a"
+str[str.length-1]; //마지막문자
+> "e"
+str[10];
+> undefined
+
+//부분 문자열 구하기 
+var str = "abcdeabcde";
+str.substring(2,4);
+> "cd"
+str.substr(2,4);
+>  "cdea"
+str.substring(2);
+> "cdeabcde"
+str.substr(2);
+> "cdeabcde"
+//substr pos가 음수인경우
+str.substr(-7,2);
+> str.substr(str.length - pos,2);
+> str.substr(10-7,2);
+> str.substr(3,2);
+> "de"
+
+//문자열 검색하기
+var str = "abcdeabcde";
+str.indexOf("bc") //첫번째 문자열 위치
+> 1
+str.lastIndexOf("bc"); //마지막 문자열 위치
+> 6
+str.indexOf("f") //사용하지 않은 문자열인 경우 -1로 반환
+> -1
+````
+
 ## 제어문
 종류|설명
 |------|----------------------------|
