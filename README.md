@@ -143,12 +143,22 @@ console.log(1 + 1);
 ## 연산자 우선순위
 1. <code>(), []</code>최우선 연산자
 2. <code>++,--</code>증감 연산자
-3. <code>8,/,%,+,-</code>산술 연산자
+3. <code>*,/,%,+,-</code>산술 연산자
 4. <code>>>,<<,>>></code>시프트 연산자
 5. <code>>,<,>=,<=,==,!==</code>비교 연산자
 6. <code>&,^,|</code>비트 연산자
 7. <code>&&, ||</code>논리 연산자
 8. <code>=,+=,-=</code>대입연산자
+9. (정리) <code>NOT(!), * / % + -, > < <= >= == !=, and(&&), or(||)</code> 순서
+
+````javascript
+2 * 3 > 4 + 5 && 6 / 3 == 2 || !false
+2 * 3 > 4 + 5 && 6 / 3 == 2 || true
+6 > 9 && 2 == 2 || true
+false && true || true
+false || true
+true
+````
 
 ### :cake: example
 
