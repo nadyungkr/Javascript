@@ -346,9 +346,23 @@ break, else, instanceof, true, case, false, new. try, catch, finally, null, type
 
 1. Array는 배열이라는 뜻을 가지고 있다.
 
-2. 배열 인덱스는 0부터 시작한다.
+2. 배열 인덱스는 0부터 시작한다. 첫번째 항목은 [0]이다.
 
-3. 첫번째 항목은 [0]이다.
+3. 주소(인덱스, index)를 이용해 각 엘리먼트에 접근이 가능하다.
+ - 배열의 엘리먼트에 접근하는 방법은 대괄호 안에 인덱스를 사용한다.
+ - <code>arr[0] = 1</code>
+ - <code>console.log(arr[arr.length-1]);</code>
+
+4. 값을 저장할 수 있는 엘리먼트(변수)의 연속된 공간이다.
+
+5. 빈 배열은 <code>var arr=[];</code>이다.
+
+6. 초기화 된 배열은 <code>var arr=[1,2,3,4,5];</code>
+
+7. 엘리멘트에 어떤 자료형이든 저장될 수 있다.
+  - <code> var mixed_arr = [ 1, true, 3.14, "string", {name:"object"}, [1,2,3,] ]; </code>
+
+8. 배열의 길이는 <code>.length</code> 속성을 이용한다.
 
 ### :cake: example
 ````html
@@ -359,7 +373,35 @@ document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 </script>
 ````
 
+### :cake: example  배열에 들어갈 수 있는 것들
+````javascript
+var arr=[ 3.14, 365, "html", {name:"object"}, 7, {object:"name"}, 5 ];
+console.log(arr);
+> [3.14, 365, "html", {name:"object"}, 7, {object:"name"}, 5]
+//배열의 첫번째 위치 접근
+console.log(arr[0]);
+> 3.14
+//배열의 마지막 위치 접근
+console.log(arr[arr.length-1]);
+> 5 //length-1
+console.log(arr.length);
+> 7
+````
 
+### :cake: 배열을 초기화 시키고, 함수도 만들어보기
+````javascript
+//빈 배열 arr를 길이가 5가 되도록 초기화 시키기
+var arr;
+var arr = ["a","b","c","d","e"];
+console.log(arr);
+//함수 solution을 수정해서 인자로 받는 배열 arr의 첫번째 엘리먼트를 return 하도록 만들기
+function solution(arr){
+  return arr[0];
+}
+var result = solution([1,2,3,4,5])
+console.log(result);
+> 1//실행결과 출력
+````
 
 ## Object  
 
@@ -376,7 +418,7 @@ document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 
 ### :cake: example 
 ````html
-<p id="example"></p>//Park HyeonJeong
+<p id="example"></p><!--Park HyeonJeong-->
 <script>
 var hyeonjeong = {
 firstName: "Park",
