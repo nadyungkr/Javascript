@@ -364,6 +364,29 @@ break, else, instanceof, true, case, false, new. try, catch, finally, null, type
 
 8. 배열의 길이는 <code>.length</code> 속성을 이용한다.
 
+9. 배열의 정렬
+ - <code>.reverse()</code> : 배열을 뒤집어 정렬하여 리턴
+ - <code>.sort()</code> : 배열안의 값을 정렬하여 리턴
+
+10. 배열에 엘리먼트 추가/삭제하기
+ - <code>.push(element)</code> : 배열의 뒤에 엘리먼트를 추가
+ - <code>.pop()</code> : 배열의 뒤에서 엘리먼트를 삭제하고 리턴
+ - <code>.shift()</code> : 배열의 앞에서 엘리먼트를 삭제하고 리턴
+ - <code>.unshift(element)</code> : 배열의 앞에 엘리먼트를 추가
+
+11. 배열 붙이기, 검색하기
+ - <code>arr1.concat(arr2)</code> : arr1과 arr2를 붙임
+ - <code>arr.indexOf(element)</code> : arr에서 element가 있는 첫 위치를 검색
+ - <code>arr.lastIndexOf(element)</code> : arr에서 element가 있는 마지막 위치를 검색
+
+ 12. 문자열 split 함수
+  - 문자열을 구분자 (separator)로 나눠서 각각을 담은 배열을 반환하는 함수
+  ````javascript
+  var str = "1,2,3,4,5";
+  arr = str.split(",");
+  arr = ["1", "2", "3", "4", "5"];
+  ````
+
 ### :cake: example
 ````html
 <p id="fa"></p>
@@ -401,6 +424,31 @@ function solution(arr){
 var result = solution([1,2,3,4,5])
 console.log(result);
 > 1//실행결과 출력
+````
+
+### :cake: 배열의 정렬, 엘리먼트 추가/삭제
+````javascript
+var arr;
+arr = [1, 2, 3, 9, 10, 11]
+var arr1 = [12, 13]
+arr.concat(arr1);
+//[1, 2, 3, 9, 10, 11, 12, 13]
+arr.indexOf(10);
+//4
+arr.lastIndexOf(3);
+//2
+arr.push(15); //배열의 뒤에 추가
+//[1, 2, 3, 9, 10, 11, 15]
+arr.unshift(0); //배열의 앞에 추가
+//[0, 1, 2, 3, 9, 10, 11, 15]
+arr.pop(); //배열 마지막 엘리먼트 삭제 후 리턴
+//[0, 1, 2, 3, 9, 10, 11]
+arr.shift(); //배열 첫번째 엘리먼트 삭제 후 리턴
+//[1, 2, 3, 9, 10, 11]
+arr.sort(); //알파벳 순서, 숫자는 암시적으로 문자열로 형변환 하기 때문에 숫자 1이 10보다 먼저 나온다. 
+//[1, 10, 11, 2, 3, 9] 
+arr.reverse();
+//[9, 3, 2, 11, 10, 1]
 ````
 
 ## Object  
