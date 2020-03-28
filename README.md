@@ -179,7 +179,7 @@ true
 ````
 
 - JavaScript에서 연산자는 변수에 값을 할당하는 데 사용된다.
-- 변수선언은 var를 사용한다 (variable의 약자) //아래 설명 추가
+- 변수선언은 var를 사용한다 (variable의 약자)
 - 자바스크립트에서 표현식은 값으로 계산된다
 - 자바스크립트 블록을 코드 블록으로 그룹화가 가능하다
 - . 연산자 또는 쉼표뒤에 코드 행을 끊을 수 있다
@@ -219,6 +219,7 @@ true
 - 작은 따옴표 안에 또 작은 따옴표가 들어가야 한다면 '내용 |'내용|' 내용'
 - 대소문자를 구분하여 사용한다
 - 예외도 있지만 일반적으로는 하나의 변수에 한가지의 자료형만 들어갈 수 있다.
+
 ````html
 <p id="ex"></p>
 <p id="ex2"></p>
@@ -233,10 +234,11 @@ document.getElementById("ex3").innerHTML = lastName; //ex3
 </script>
 ````
 
-- 주석은 // 를 사용하여 표현한다
-- 대소문자를 구분하여 사용한다
+- 주석은 //를 사용하여 표현한다
 - 여러줄은 /**/을 사용한다
+- 대소문자를 구분하여 사용한다
 - 하나의 명령문으로 많은 변수를 선언 가능하다
+
 ````html
 <p id="hj"></p>
 <script>
@@ -332,11 +334,11 @@ break, else, instanceof, true, case, false, new. try, catch, finally, null, type
 
 
 ## 식별자 규칙
-1. 숫자로 시작하면 안된다. /*alpha10 가능, 10alpha 불가능*/
+1. 숫자로 시작하면 안된다. *alpha10 가능, 10alpha 불가능*
 2. 공백 표시 안된다. alp ha 불가능
 3. 소문자로 만든다. ALPHA 불가능
-4. 사용가능한 특수문자 _와 $만 가능하다. /*_alpha 가능, $alpha 가능*/
-5. 키워드, 예약어 사용 X /*break, do, while 불가능*/
+4. 사용가능한 특수문자 _와 $만 가능하다. *_alpha 가능, $alpha 가능*
+5. 키워드, 예약어 사용 X *break, do, while 불가능*
 6. 한글, 일본어, 한자 다 되지만 알파벳 쓰는 것이 관례
 7. 의미없는 단어가 아닌 input output처럼 관계성이 있는 것 사용 권장
 8. 생성자 함수 이름은 항상 **대문자**로 시작
@@ -396,19 +398,17 @@ document.getElementById("fa").innerHTML = favorite[0];//떡볶이
 </script>
 ````
 
-### :cake: example  배열에 들어갈 수 있는 것들
+### :cake: 배열에 들어갈 수 있는 것들
 ````javascript
 var arr=[ 3.14, 365, "html", {name:"object"}, 7, {object:"name"}, 5 ];
 console.log(arr);
-> [3.14, 365, "html", {name:"object"}, 7, {object:"name"}, 5]
-//배열의 첫번째 위치 접근
+// [3.14, 365, "html", {name:"object"}, 7, {object:"name"}, 5]
 console.log(arr[0]);
-> 3.14
-//배열의 마지막 위치 접근
+// 3.14
 console.log(arr[arr.length-1]);
-> 5 //length-1
+// 5 
 console.log(arr.length);
-> 7
+// 7
 ````
 
 ### :cake: 배열을 초기화 시키고, 함수도 만들어보기
@@ -423,7 +423,7 @@ function solution(arr){
 }
 var result = solution([1,2,3,4,5])
 console.log(result);
-> 1//실행결과 출력
+// 1
 ````
 
 ### :cake: 배열의 정렬, 엘리먼트 추가/삭제
@@ -507,48 +507,48 @@ document.getElementById("example").innerHTML = hyeonjeong.fullName;
 //특정 위치 문자열 나타내기
 var str = "abcdeabcde";
 srt.charAt(0); //첫문자
-> "a"
+//"a"
 str.charAt(11);
-> ""
+//""
 str.length;
-> 10
+//10
 str.charAt(length-1); //마지막 문자
-> "e"
+//"e"
 
 //대괄호 사용하여 특정위치 문자열 나타내기
 var str = "abcdeabcde";
 str[0]; //첫문자
-> "a"
+//"a"
 str[str.length-1]; //마지막문자
-> "e"
+//"e"
 str[10];
-> undefined
+//undefined
 
 //부분 문자열 구하기 
 var str = "abcdeabcde";
 str.substring(2,4);
-> "cd"
+// "cd"
 str.substr(2,4);
->  "cdea"
+//  "cdea"
 str.substring(2);
-> "cdeabcde"
+// "cdeabcde"
 str.substr(2);
-> "cdeabcde"
+// "cdeabcde"
 //substr pos가 음수인경우
 str.substr(-7,2);
-> str.substr(str.length - pos,2);
-> str.substr(10-7,2);
-> str.substr(3,2);
-> "de"
+// str.substr(str.length - pos,2);
+// str.substr(10-7,2);
+// str.substr(3,2);
+// "de"
 
 //문자열 검색하기
 var str = "abcdeabcde";
 str.indexOf("bc") //첫번째 문자열 위치
-> 1
+// 1
 str.lastIndexOf("bc"); //마지막 문자열 위치
-> 6
+// 6
 str.indexOf("f") //사용하지 않은 문자열인 경우 -1로 반환
-> -1
+// -1
 ````
 
 ## 제어문
