@@ -567,12 +567,20 @@ do-while|실행문이 최초에 한번 처리 된 후, 조건을 검사 하고 �
 3. else if 사용은 첫번째 조건이 false인 경우, 새로운 조건을 지정할 때
 4. switch를 많이 실행해야 하는 경우 대체로 사용 됨
 5. 문법은 if (condition) {} 으로 사용됨
-6. if는 소문자로 사용해야 함. If 또는 IF는 오류를 생성함 
-7. if (condition) {} //block of code to be executed if the condition is true
-    else {} //block of code to be  executed if the condition is false
-8. if (condition1) {} //block of code to be executed if the condtion1 is true
-    else if (condition2) {} // block of code to be executed if the condition1 is false and condition2 is true
-    else {} //block of code to be executed if the condition1 is flase and condition2 is false 
+6. if는 소문자로 사용해야 함. If 또는 IF는 오류를 생성함
+7. if, else if, else
+````javascript
+  if(/*조건식*/) {
+    /*참인경우 실행될 코드*/
+  } else if( /*조건식*/) {
+    /*if 문의 조건이 거짓이고, 위의 조건식이 참인경우 실행될 코드*/
+  } else if ( /*조건식*/ ){
+    /*위의 if, else if문의 모든 조건이 거짓이고, 위의 조건식이 참인경우 실행될 코드*/
+  }
+  else {
+    /*모든 if, else if 문이 모두 실행되지 않았을 때 실행될 코드*/
+  }
+````
 
 ### :cake: example
 ````javascript
@@ -603,6 +611,76 @@ if(name == "관리자" || wifi == "둥이"){
   //관리자일때 또는 둥이일때 
 }
 ````
+*if 문에 따라오는 괄호에는 true/false라는 값을 직접 넣는 경우는 거의 없고, 관계연산자를 많이 사용한다. 관계를 알아보기 위한 것으로 true/false 예제를 사용하여 다음 콘솔에 출력되는 값을 아래와 같이 표현할 수 있다.*
+````javascript
+
+if ( true ){
+  console.log("1");
+} else if ( true ) {
+  console.log("2");
+} else if ( true ) {
+  console.log("3");
+} else {
+  console.log("4");
+}
+//console에 출력되는 값 "1";
+
+if ( false ){
+  console.log("1");
+} else if ( true ) {
+  console.log("2");
+} else if ( true ) {
+  console.log("3");
+} else {
+  console.log("4");
+}
+//console에 출력되는 값 "2";
+
+if ( false ){
+  console.log("1");
+} else if ( false ) {
+  console.log("2");
+} else if ( false ) {
+  console.log("3");
+} else {
+  console.log("4");
+}
+//console에 출력되는 값 "3";
+
+if ( false ) {
+  console.log("1");
+} else if ( false ) {
+  console.log("2");
+} else if ( false ) {
+  console.log("3"); 
+} else {
+  console.log("4");
+}
+//console에 출력되는 값 "4";
+````
+*if문 예제, 관계연산자 사용*
+- solution이라는 함수는 age가 20대인지를 확인하는데, 20대라면 true, 그렇지 않으면 false return 한다. 20대인지를 확인하기 위해서 20세 이상이면서 30세 미만인지를 체크하려고 할 때 if문을 어떻게 작성할 수 있을까? (논리연산 && 사용하기)
+````javascript
+function solution(age){
+  //age가 20이상, 30 미만이면 20대
+  if (20 <= age && age < 30) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+````
+- 인자 year이 윤년인지 아닌지를 true, false로 반환하는 solutions 함수를 완성 하세요. (편의상, 4의 배수인 해는 모두 윤년이라고 생각하세요.)
+````javascript
+function solutions(year){
+  if (year % 4 == 0){
+    return true;
+  } else {
+    return false;
+  }
+}
+````
 
 ## Switch (조건문)
 1. switch문은 다른 조건에 따라 다른 작업을 수행하는데 사용됨
@@ -611,7 +689,7 @@ if(name == "관리자" || wifi == "둥이"){
 4. 일치하는 코드가 있으면 관련 코드 블록이 실행됨
 5. javascript가 break 키워드에 도달하면 스위치 블록에서 빠져나옴(블록내부 실행 중지)
 6. 마지막 사례에서 break 를 할 필요는 없음. 어차피 끊어지게 됨.
-7. default가 switch 블록의 마지막이 아니라면 default에도 break를 해주어야 함
+7. default가 switch 블록의 마지막이 아니라면 default에도 break를 해주어야 함. 계속 반환되기 때문.
 8.  공동 코드 블록을 사용할 수 있음.
 9.  여러 사례가 사례 값과 일치하면 첫번째 사례가 선택 됨 (이미 들어가버리면 끝)
 10. 일치하는 사례가 없으면 프로그램은 기본 레이블로 계속 진행됨
@@ -622,51 +700,57 @@ if(name == "관리자" || wifi == "둥이"){
 
 
 ### :cake: example
-````javascript
-var age = 25;
+- console창에서 주문하기 
+ ````javascript
+ console.log("Menu");
+ console.log("1, Ice Americano");
+ console.log("2, Cafe Latte");
+ console.log("3, Cappuccino");
+ console.log("4, Tea");
 
-switch(age){
-  case 15:
-  //age가 15이면
-  break;
+ var choice = parseInt( prompt("메뉴를 선택해 주세요") );
 
-  case 25:
-  //age가 25이면
-  break;
-}
-//현재 age가 25이기때문에 case 25를 실행한다.
+ console.log( choice + "번 메뉴를 선택하셨습니다." );
 
-switch(new Date().getDay)){
-  case 4:
-  case 5:
-    text = "soon it is weekend";
-    break;
-  case 0:
-  case 6:
-    text = "It is Weekend";
-    break;
-  default:
-    text = "Looking forward to the Weekend";
-}
-// 4와 5는 동일한 코드 블록을 공유하고, 0과 6도 코드 블록을 공유
-
-var x = "0";
-switch (x) {
-  case 0:
-    text = "0ff";
-    break;
+ switch( choice ) {
   case 1:
-    text = "0n";
+    console.log("아이스 아메리카노는 1500원입니다");
     break;
-  default :
-    text = "No value found";
-
-}
-
-/*이 경우에서는 x와 일치 하지 않음 그래서 기본 값인 No value found가 나오게 됨 
-"0" 은 string, case 0: 이 뜻은 case가 숫자 0일때 라는 뜻이므로
-동일한 유형이 아니라 엄격한 비교가 불.가.능 */
+  //1번 주문과 동시에 switch문 종료
+  case 2:
+    console.log("카페라떼는 1800원입니다");
+    break;
+    //2번 주문과 동시에 switch문 종료
+  case 3:
+    console.log("카푸치노는 2000원입니다");
+    break;
+    //3번 주문과 동시에 switch문 종료
+  case 4:
+    console.log("홍차는 1300원입니다");
+    break;
+    //4번 주문과 동시에 switch문 종료
+  default:
+    console.log("죄송합니다, 그런 메뉴는 없습니다");
+    break;
+ } 
  ````
+ - 각 달을 month라는 인자로 받아 그 달이 몇일까지 있는지 반환하는 함수 solution 함수를 완성하세요 (2월은 28일까지 있다고 가정하세요)
+````javascript 
+function solution( month ) {
+  switch ( month ) {
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      return 30;
+    case 2:
+      return 28;
+    default:
+      return 31;
+    //return의 경우 반환하는 즉시 끝나므로 break를 사용하지 않아도 된다. case는 콤마 없이 각각 case별로 나누어서 써주어야 한다. case 4,6,9,11 (X) case 4: case 6: (O)
+  }
+}
+````
 
  ## Break와 Continue 더 자세히 알아보기 //continue 추후 수정
  1. switch에서 점프 하는 기능
@@ -689,20 +773,21 @@ document.getElementById("example").innerHTML = text;
 ````
 
  ## while(반복문)
- 1. 지정된 조건이 true 라면 loop는 코드 블록을 실행할 수 있음
- 2. 지정된 조건에 해당하는만큼 코드 블록을 반복함
- 3. while (condition) {} // code block to be executed
+ 1. 조건에 따라 프로그램의 일정 코드를 반복적으로 수행할 수 있도록 하는 구문
+ 2. 조건이 만족하는 동안 반복실행 될 코드를 계속 실행
+ 3. 
+ ````javascript
+ while (/*조건식*/){
+   /* 반복 실행될 코드 */
+ }
+ ````
+ 4. continue: 남은 반복 실행될 코드를 모두 skip
+ 5. break: 반복문에서 즉시 탈출 
 
  ### :cake: example
  ````javascript
-
-var i = 1;
-
-while(조건식){
-  //조건이 참이면 실행
-}
-
 while(i < 10) {
+  var i = 1;
   text += "The number is" + i;
   i++;
 }
@@ -720,6 +805,18 @@ The number is 8
 The number is 9
 */
 //조건에 사용된 변수를 늘리는것을 잊어버리면 이 loop는 계속 끝나지 않을 것이고 browser가 다운됨
+````
+- 함수 solution은 n을 인자로 받아서 1부터 n까지 더한 값을 return하는 함수입니다. 예를 들어 solution(3)을 호출하면 1+2+3인 6을 return합니다. 빈칸을 완성하여 solution을 완성하시오.
+````javascript
+function solution(n){
+   var count = 1;
+   var sum = 0;
+   while (/*빈칸*/ n >= count ) {
+     sum = sum + /*빈칸*/ count ;
+     count++;
+   }
+   return sum; //반환하고 끝
+}
 ````
 
 
