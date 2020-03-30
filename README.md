@@ -1087,6 +1087,20 @@ F 0
 O 0
 */
 ````
+- 2단부터 9단까지 출력하는 구구단 만들기 (변수의 shadowing)
+````javascript
+function printTimesTable(a){
+    var i = 1;
+    for( i = 1 ; i <= 9 ; i++ ){
+        console.log( a + " * " + i + " = " + a*i );
+    }
+}
+
+for( var i = 2 ; i <= 9 ; i++ ){
+    printTimesTable(i);
+}
+//함수안에 var i  = 1을 선언해주지 않으면 2단만 출력이 됨.
+````
 
 ## HTML 요소를 추가하는 방법
 - <code>createElement()</code>
