@@ -859,25 +859,50 @@ do {
 9. 명령문 2는 종종 조기 변수의 조건을 평가하는데 사용됨 명령문 2도 선택사항이며 true를 반환하면 루프가 다시 시작되고 false를 반환하면 루프가 종료됨.
 10. 명령문 2을 생략하려면 루프 내부에 break를 제공해야함. 그렇지 않으면 루프가 끝나지 않음. 브라우저가 다운되게 됨
 11. 명령문 3은 종종 초기 변수 값을 증가 시킴. 명령문 3은 선택사항이며 음수 증분(i--), 양수 증분 (i=i + 15) 또는 기타 다른 작업도 수행이 가능. 루프 내에서 값을 증가시킬 때와 같이 명령문 3도 생략이 가능
+12. *while문에서 continue;문을 만나면 반복실행 코드의 끝으로 이동한 다음, 바로 조건식을 검사. 중괄호{} 끝 구문으로 간 다음, 조건식을 확인하기전 업데이트 구문을 먼저 실행하고 조건식을 검사 한 후 반복 실행함*
 
 ### :cake: example
 ````javascript
+var sum = 0;
 for(var i = 0 ; i < 5 ; i++){
-    text += "the number is" + i + "<br>";
+    sum = sum + i;
 }
-// 명령문 1은 루프가 시작되기 전 변수를 설정 (var i = 0)
-// 명령문 2는 루프 실행 조건을 정의 (i는 10보다 작다)
-// 명령문 3은 루프의 코드블록이 실행될 떄마다 값 (i++) 을 증가시킴 
-/*
-the number is 0
-the number is 1
-the number is 2
-the number is 3
-the number is 4까지만 실행되고 5부터는 루프 밖으로 나가게 됨
-*/
-
 ````
-문서 객체 배열 사용과 반복문 예제
+
+### while문을 for문으로 바꾸어보기
+````javascript
+var array = [1,2,3,4,5,6,7,8,9,10];
+var i = 0; //반복문 진입 전 실행 될 초기 코드
+while ( i < array.length ){
+  //반복 실행될 코드
+  console.log( array[i] );
+  
+  i++; // 반복문 코드가 한번 실행되고 나면 실행될 업데이트 구문
+}
+//콘솔에는 한 줄씩 출력됨 1,2,3,4,5,6,7,8,9,10
+//while문을 for문으로 바꿔보기
+var array = [1,2,3,4,5,6,7,8,9,10];
+
+for ( var i = 0 ; i < array.length; i++ ) {
+  //반복 실행될 코드
+  console.log( array[i] );
+}
+````
+
+### for문을 이용해 배열 cost의 값을 모두 더해 total_cost 변수에 저장하세요
+````javascript
+//문제
+var cost = [ 85, 42, 37, 10, 22, 8, 15 ];
+var total_cost = 0;
+//문제 끝
+for ( var i = 0 ; i < cost.length ; i++ ) {
+  total_cost = total_cost + cost[i];
+}
+console.log(total_cost);
+//219
+````
+
+### 문서 객체 배열 사용과 반복문 예제
 ````html
 <head>
   <script>
@@ -901,6 +926,65 @@ the number is 4까지만 실행되고 5부터는 루프 밖으로 나가게 됨
     <h1>제목5</h1>
     <h1>제목6</h1>
 </body>
+````
+
+## for in문
+1. 객체(object)의 각 엘리먼트에 접근할 수 있는 반복문
+2. 객체의 속성들을 출력하는 동일한 코드
+3. for구문 사용
+````javascript
+var obj = {
+  name:"object",
+  weight:30,
+  isObject:true,
+  arr:[1,2,3],
+  obj:{property:1}
+};
+
+var property_list = object.key(obj);
+
+for ( var i=0 ; i < property_list.length ; i++ ) {
+  var propertyName = property_list[i];
+  console.log( "\t", propertyName, ": ", obj[propertyName] );
+}
+````
+4. for in 구문 사용
+````javascript
+for ( var propertyName in obj ){
+  console.log( "\t", propertyName, ": ", obj[propertyName] );
+}
+````
+5. console에 in을 넣어 확인해보기
+  - console.log("name" in obj); 결과 값 true *obj 객체 속성에 name이 있음*
+  - console.log("age" in obj); 결과 값 false *obj 객체 속성에 age는 없음*
+
+### :cake: for in문을 이용해서 obj의 속성 중, number 타입의 값을 모두 더해서 sum에 저장하도록 구문을 완성해보세요
+````javascript
+var obj = {
+  name: "object",
+  age : 10,
+  weight : 5
+}
+var sum = 0;
+for ( /* 빈칸 1*/ in /* 빈칸 2*/ ) {
+  if ( typeof( /* 빈칸 3*/  ) == "number") {
+      sum = sum + /* 빈칸 4*/ ;
+  }
+}
+console.log("sum :", sum);
+/*
+빈칸 1 var propertyName
+빈칸 2 obj
+빈칸 3 obj[propertyName]
+빈칸 4 obj[propertyName]
+console >>  sum : 15
+*/
+var sum = 0;
+for ( var propertyName in obj ) {
+  if ( typeof(obj[propertyName]) == "number" ) {
+      sum = sum + obj[propertyName];
+  }
+}
 ````
  
 ### :cake: example 
