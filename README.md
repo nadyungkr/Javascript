@@ -958,6 +958,34 @@ for ( var propertyName in obj ){
   - console.log("name" in obj); 결과 값 true *obj 객체 속성에 name이 있음*
   - console.log("age" in obj); 결과 값 false *obj 객체 속성에 age는 없음*
 
+### 객체에 대한 for...in문
+````javascript
+var obj = {x:10, y:11, z:12};
+for (property in obj){
+    console.log("name: " + property + "; value: " + obj[property]);
+}
+//console >>
+/*
+name: x; value: 10
+name: y; value: 11
+name: z; value: 12
+*/
+````
+### 배열에 대한 for...in문
+````javascript
+var array = [10,11,12];
+for (property in array){
+    console.log("name: " + property + "; value: " + array[property]);
+}
+//console >>
+/*
+name: 0; value: 10
+name: 1; value: 11
+name: 2; value: 12
+*/
+````
+
+
 ### :cake: for in문을 이용해서 obj의 속성 중, number 타입의 값을 모두 더해서 sum에 저장하도록 구문을 완성해보세요
 ````javascript
 var obj = {
@@ -986,25 +1014,78 @@ for ( var propertyName in obj ) {
   }
 }
 ````
+## 변수의 Scope
+1. 선언한 변수가 유효한 영역
+2. function scope
+ - 선언된 변수는 선언된 함수 안에서 접근 가능
+ - 선언된 함수 안에서 선언된 함수 (nested function)에서도 접근 가능
+ ````javascript
+function a() {
+   var v_a = "a";
+   
+    function b() {
+      var v_b = "b";
+      console.log("b :", typeof(v), typeof(v_a), typeof(v_b));
+    }
+
+    b();
+
+    console.log("a :", typeof(v), typeof(v_a), typeof(v_b));
+}
  
-### :cake: example 
-javascript로 style 지정 방법
-````html
-<head>
-  <title>Document</title>
-  <script>
-    window.onload = function(){
-        var header = document.getElementById("header");
-        header.style.border = "2px solid red";
-        header.style.color = "blue";
-        header.style.fontFamily = "궁서";
-        /*font-family처럼 끊어지는 글자는 대문자 써서 이어붙인다*/
-    };
-  </script>
-</head>
-<body>
-    <h1 id="header">제목1</h1>
-</body>
+var v = "v";
+ 
+ a();
+
+ console.log("v :", typeof(v), typeof(v_a), typeof(v_b));
+//console >>
+/*
+b: string string string
+a: string string undefined
+v: string undefined undefined
+*/
+````
+
+## 변수의 shadowing
+1. 함수 안에서 밖에서도 선언 되었던 같은 이름의 변수를 사용하는 경우 
+ -  함수 밖의 변수는 잠시 가려짐 (shadowing)
+ -  함수 안에서는 해당 함수에서의 변수를 사용 (함수 밖 변수의 값은 변하지 않음)
+ - 함수에서 빠져나오면 다시 해당 변수에 접근할 수 있음
+2. 함수 안에서만 값이 유지되어야 하는 경우
+ - 함수 안에서 var 키워드를 사용해 선언하고 사용
+3. 여러 함수에서 값이 유지되면서 사용되는 변수의 경우
+ - 함수를 포괄하는 곳에서 선언하고 사용
+````javascript
+function shadowing_example(){
+  console.log("F", val);
+  val++;
+}
+
+var val = 0;
+shadowing_example();
+console.log("O", val);
+//console>>
+/*
+F 0
+O 1
+*/
+````
+- 함수 안에 val 값을 0으로 지정해주면?
+```` javascript
+function shadowing_example(){
+  var val = 0;
+  console.log("F", val);
+  val++;
+}
+
+var val = 0;
+shadowing_example();
+console.log("O", val);
+//console>>
+/*
+F 0
+O 0
+*/
 ````
 
 ## HTML 요소를 추가하는 방법
