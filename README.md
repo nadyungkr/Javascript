@@ -819,6 +819,30 @@ function solution(n){
 }
 ````
 
+## do while(반복문)
+1. 한번은 코드가 실행되고, 이후에 반복실행이 될지 말지를 결정
+2. 조건식이 거짓(False)일 때, While문: 한번도 실행되지 않음. do while문: 한번은 실행되고 종료됨
+
+### :cake: do while
+````javascript
+var condition = false;
+while (condition) {
+  console.log("이 구문은 실행되지 않음");
+} //실행되지 않음
+
+do {
+  console.log("이 구문은 한번은 실행됨");
+} while(condition); //한번 실행되고 종료
+
+do {
+  var answer = parseInt( prompt("1+1=?"));
+} while( answer != 2 );
+  console.log("맞췄습니다");
+  //2를 작성하는 순간 console.log("맞췄습니다")가 실행되고 종료.
+  // 2를 제외한 답을 작성하는 경우 반복문이 계속 실행됨
+
+````
+
 
 ## for(반복문)
 1. 매번 다른 값으로 동일한 코드를 반복해서 실행하려면 loop가 필요함
