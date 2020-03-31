@@ -1124,6 +1124,33 @@ for( var i = 2 ; i <= 9 ; i++ ){
   </script>
   ````
 
+## closure(클로저)
+1. 함수, 함수가 선언될 때의 environment로 구성
+2. 함수가 정의 될 때의 environment가 함께 closure로 결합되면서, 다양한 활용이 가능
+````javascript
+function makeCounterFunction(initVal){
+  var count = initval;
+  function Increase(){
+    count++;
+    console.log(count);
+  }
+    return Increase;
+}
+var counter1 = makeCounterFunction(0);
+var counter2 = makeCounterFunction(10);
+//consle 출력값
+/*
+1
+11
+*/
+````
+3. counter1의 closure
+  - 함수: <code>function Increase(){}</code>
+  - 환경: <code>var count = 0;</code>
+4. counter2의 closure
+  - 함수: <code>function Increase(){}</code>
+  - 환경: <code>var count = 10;</code>
+
 ## javascript 내장함수
 - 함수(function)는 특정한 작업을 독립적으로 수행하는 단위
 - 함수는 어떤 값을 매개변수를 통해 입력받을 수 있으며 결과 값을 반환함
@@ -1167,7 +1194,7 @@ setInterval()|일정 시간마다 지정된 명령을 반복 호출
   Number|문자로 되어 있는 숫자를 일반 숫자로 변경
   Screen|컴퓨터 화면 해상도, 화면 크기, 색상, 정보등을 알아낼 때 사용
 
-  ## Array 객체의 메소드
+## Array 객체의 메소드
   메소드|기능
   |----|----|
   join()|배열 요소들을 하나의 문자열로 반환
@@ -1176,7 +1203,7 @@ setInterval()|일정 시간마다 지정된 명령을 반복 호출
   slice(a,e)|배열 중에서 a부터 e까지의 요소로 새로운 배열 생성
   sort(조건)|배열 요소들을 '조건'대로 정렬(조건이 없는 경우 오름차순 정렬)
 
-  ## String 객체의 메소드
+## String 객체의 메소드
   메소드|기능
   |-------|----|
   split(분리자)|'분리자'를 이용하여 문자열을 분리함으로써 두 개 이상의 문자열로 반환
