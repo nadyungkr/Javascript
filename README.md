@@ -1245,27 +1245,6 @@ setTimeout()|일정 시간 후 지정된 처리를 호출
   - window.screen : 디스플레이 사이즈
   - window.document : 웹 페이지 문서의 HTML, CSS등에 접근 가능
 
-
-## 이벤트 핸들러의 개념(Event Handler)
-- 이벤트(하나의 행위) 발생 시 그 이벤트에 따른 반응을 하도록 하는 것
-- 이벤트 핸들러의 종류  
-
-이벤트 헨들러 종류|기능
-|-------|-----------------------------|
-onLoad()|html 문서를 읽는 경우
-onUnload()|html 문서를 사라질 경우
-onClick()|마우스로 클릭하는 경우
-onKeyDown()|키보드의 키를 눌렀을 때
-onkeyUp()|키보드의 키를 놓을 때
-onMouseDown()|마우스 버튼을 누를 때
-onMouseUp()|마우스 버튼을 누른 상태로 손을 뗄 때
-onMouseMove()|마우스가 대상 영역 위에서 이동할 때
-onMouseOut()|마우스가 대상에서 벗어날 때
-onChange()|대상 값을 선택 혹은 변경하는 경우
-onSelect()|문자열을 드래그 등으로 선택하는 경우
-onFocus()|대상에 포커스가 들어왔을 때
-onBlur()|대상이 포커스를 잃어버렸을 때
-
 ## DOM + JS (Javascript)
 > DOM (document Object Model, 문서 객체 모델) : 컴퓨터가 문서를 잘 처리할 수 있도록 문서에 대한 구조를 약속한 것
  >> Tree 형태를 따름 : 족보나 가계도와 비슷함. 부모 요소와 자식 요소 구분
@@ -1375,3 +1354,74 @@ setInterval( callback, 5000 );
 clearInterval(2);
 //clearInterval(2);를 입력하면 콘솔로그 앞에 증가되던 숫자가 멈추고 함수 호출이 취소됨
 ````
+
+## 브라우저에서 발생하는 EVENT 종류
+1. form event : HTML 문서의 form element에 변화가 생기거나 submit 버튼을 누르는 경우 등의 상황에서 발생
+2. window event : 페이지가 모두 로드되었을 때 발생하는 onload event 등이 있음
+3. mouse event : 사용자가 마우스를 조작했을 때 발생
+4. key event : 사용자가 키보드를 조작했을 때 발생
+
+## Event
+1. click : mouse event로 HTML element를 마우스로 클릭한 경우 발생
+2. change : form event로 form element의 내용이 변경된 경우 발생
+3. keydown : key event로 key가 눌린 경우 발생
+
+## 이벤트 핸들러의 개념(Event Handler)
+- 이벤트(하나의 행위) 발생 시 그 이벤트에 따른 반응을 하도록 하는 것
+- 이벤트 핸들러의 종류  
+
+이벤트 헨들러 종류|기능
+|-------|-----------------------------|
+onLoad()|html 문서를 읽는 경우
+onUnload()|html 문서를 사라질 경우
+onClick()|마우스로 클릭하는 경우
+onKeyDown()|키보드의 키를 눌렀을 때
+onkeyUp()|키보드의 키를 놓을 때
+onMouseDown()|마우스 버튼을 누를 때
+onMouseUp()|마우스 버튼을 누른 상태로 손을 뗄 때
+onMouseMove()|마우스가 대상 영역 위에서 이동할 때
+onMouseOut()|마우스가 대상에서 벗어날 때
+onChange()|대상 값을 선택 혹은 변경하는 경우
+onSelect()|문자열을 드래그 등으로 선택하는 경우
+onFocus()|대상에 포커스가 들어왔을 때
+onBlur()|대상이 포커스를 잃어버렸을 때
+
+## HTML Tag의 속성으로 Event Handler 추가
+1. Tag의 속성에 event handler 코드를 추가
+  - onEvent 속성 사용 ( onclick, onchange, onkeydown..... )
+````html
+<h1 onclick="console.log('clicked');">...</h1>
+<input type="text" onchange="console.log('changed');" onkeydown="console.log('typed')";>
+````
+
+## JS에서 EventHandler 설정
+1. property에 직접 Handler 설정
+  - Element의 "on" + "event"의 속성에 메소드를 직접 지정
+````javascript
+document.getElementById("form1").onsubmit = function eventHandler(){
+  console.log("form property");
+  return false; // 브라우저의 submit 처리 비활성
+}
+````
+2. addEventListener 메소드
+  - Element의 addEventListener(이벤트, 함수) 메소드를 호출해, eventHandler 등록
+    - 여러개의 이벤트 핸들러를 등록할 수 있음
+````javascript
+document.getElementById("form1").addEventListener(
+  "submit",
+  function eventHandler(){
+    console.log("form addEventListener");
+    return false;
+  }
+);
+````
+3. removeEventListener 메소드
+  - element의 removeEventListener(이벤트, 함수) 메소드를 호출해, eventHandler 삭제
+4. return false
+  - submit : form 태그의 submit 이벤트
+    - EventHandler에서 return false시 브라우저 자체 기능(페이지 이동) 비활성
+  - keydown: 키를 누른 경우 발생하는 이벤트
+    - EventHandler에서 return false시 키 입력 비활성
+    - 실제로는 keydown event → keypress event →  keyup event 순으로 이벤트가 발생하며 keypress event 발생시에 키가 입력됨
+    - keydown event 에서 return false를 한 경우 keypress event가 이어서 발생하지 않음.
+
