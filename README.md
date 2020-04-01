@@ -1335,3 +1335,43 @@ onBlur()|대상이 포커스를 잃어버렸을 때
     - .removeChild(인자) : 삭제할 element를 인자로 받아 호출된 element의 자식중에 해당 element를 삭제
     - .insertBefore(인자1, 인자2) : 인자 1로 받은 element를 호출된 element의 자식 중 인자 2의 이전에 추가함
     - .cloneNode() : 호출된 element를 복사해서 반환함
+
+## Event + Js ()
+ > Callback 함수
+ >> 조건을 등록해두고 그 조건을 만족한 경우, 나중에 호출해주는 함수
+
+ > 시간을 기반으로 콜백함수를 호출하는 명령
+1. SetTimeout( function, time )
+  - time 시간이 지난 경우 function 함수를 콜백하는 함수
+  - time은 millisecond(1/1000초) 단위
+  - timerId를 반환함
+2. clearTimeout ( timed )
+  - setTimeout 함수 호출의 결과로 반환된 timerId를 인자로 받아 예약되어 있던 function 호출을 취소
+  - 이미 function이 호출 된 경우 (시간이 지나 이벤트가 발생한 경우)에는 효과가 없음
+3. setInterval( function, time )
+  - time 시간이 경과할때마다 function 함수를 콜백하는 함수
+  - timerId를 반환함
+4. clearInterval ( intervalId )
+   - setInterval 함수 호출의 결과로 반환된 intervalId를 인자로 받아 주기적으로 호출되던 function 호출을 취소
+5. timerId
+  - setTimeout의 경우 timerId가 반환 될 경우 clearTimeout에 timerId를 넣어 호출을 취소 가능
+  - setInterval의 경우 timerId가 반환 될 경우 clearInterval에 timerId를 넣어 호출을 취소 가능
+
+### :cake: 콜백함수 example
+````javascript
+function callback() { console.log("callback function is called"); }
+setTimeout( callback, 3000 );
+// console에 출력되는 내용
+/*
+> 1 (여기서 1은 timerId이다) 
+callback function is called
+*/
+setInterval( callback, 5000 );
+//console에 출력되는 내용
+/*
+2 (여기서 2는 timerId이다)
+(5초마다 1회씩 출력되는 숫자 증가) callback function is called
+*/
+clearInterval(2);
+//clearInterval(2);를 입력하면 콘솔로그 앞에 증가되던 숫자가 멈추고 함수 호출이 취소됨
+````
