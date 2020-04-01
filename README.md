@@ -752,7 +752,7 @@ function solution( month ) {
 }
 ````
 
- ## Break와 Continue 더 자세히 알아보기 //continue 추후 수정
+ ## Break와 Continue 더 자세히 알아보기 *while문, switch문에 추가 설명있음*
  1. switch에서 점프 하는 기능
  2. loop를 뛰어넘기 위해 사용
 
@@ -1212,21 +1212,6 @@ setInterval()|일정 시간마다 지정된 명령을 반복 호출
   loLowerCase()|소문자 형태로 반환
   loUpperCase()|대문자 형태로 반환
 
-## 자바스크립트 브라우저 내장 객체
-1. 익스플로러와 같은 웹 브라우저 관련 객체를 브라우저 내장객체라고 함
-2. 브라우저에 있는 창, 문서, 도구 모음, 상태표시줄 등에 해당하는 객체들의 정보를 제어
-3. 계층 구조로 되어 있으며 상위 객체와 하위 객체가 있음
-4. Window, Document, Frame, History, Location 객체 등이 있다.
-
-## 브라우저 내장 객체
-객체|설명
-|----------|--------------------------------|
-window 객체|웹 브라우저 창을 위한 속성과 메소드를 제공<br>하위 객체: Document, Frame, History, Location 객체
-Documnet 객체|웹 브라우저에 실행되는 HTML 문서의 본문(BODY) 정보를 관리<br>하위 객체: Anchor, Area, Form, Image, Layer, Link 객체
-Frame 객체|HTML 문서의 프레임 정보를 제공
-History 객체|웹 브라우저의 히스토리 정보를 이용하여 이동
-Location 객체|웹 브라우저 주소표시줄의 URL 주소 정보를 제공
-
 ## Window 객체의 속성
 객체 속성|기능
 |----------|--------------------------------|
@@ -1250,6 +1235,17 @@ print()|화면 내용 프린트
 setInterval()|일정 시간마다 지정된 처리를 반복 호출
 setTimeout()|일정 시간 후 지정된 처리를 호출
 
+## Window object 추가 설명
+1. javascript 실행시 가장 상위에 존재하는 객체
+  - 변수를 선언하거나 함수 선언시 window 객체 안에서 선언 됨
+2. 표시된 웹 페이지의 정보에 접근하거나 변경할 수 있음. window 객체가 제공하는 API를 알아보면 다음과 같음 
+  - window.location : 현재 브라우저 창의 주소를 나타냄
+  - window.location.href : 브라우저 창에 입력된 주소, 변경 가능
+  - window.navigator : 브라우저 자체에 대한 정보
+  - window.screen : 디스플레이 사이즈
+  - window.document : 웹 페이지 문서의 HTML, CSS등에 접근 가능
+
+
 ## 이벤트 핸들러의 개념(Event Handler)
 - 이벤트(하나의 행위) 발생 시 그 이벤트에 따른 반응을 하도록 하는 것
 - 이벤트 핸들러의 종류  
@@ -1270,4 +1266,72 @@ onSelect()|문자열을 드래그 등으로 선택하는 경우
 onFocus()|대상에 포커스가 들어왔을 때
 onBlur()|대상이 포커스를 잃어버렸을 때
 
-정리 끝
+## DOM + JS (Javascript)
+> DOM (document Object Model, 문서 객체 모델) : 컴퓨터가 문서를 잘 처리할 수 있도록 문서에 대한 구조를 약속한 것
+ >> Tree 형태를 따름 : 족보나 가계도와 비슷함. 부모 요소와 자식 요소 구분
+
+1. Document Object
+  - javascript에서 document로 접근 가능
+  - children에는 문서의 최상위 엘리먼트인 html이 존재
+
+2. Element API
+  - 자식, 부모 엘리먼트에 접근하는 방법
+    - .children : 해당 object의 자식 노드에 대한 배열
+    - .parentNode : 부모 노드
+    - .firstElementChild : 첫 자식 엘리먼트
+    - .lastElementChild : 마지막 자식 엘리먼트
+  - 같은 레벨의 형제 엘리먼트에 접근하는 방법
+    - .nextElementSibling 
+    - .previousElementSibling
+  
+3. 단일 Element 선택 
+  - DOM API를 활용해 문서에서 엘리먼트를 선택하는 방법
+    - document.getElementBy~ : 단일 엘리먼트를 선택하는 메소드
+    - document.getElementsBy~ : 다중 엘리먼트를 선택하는 메소드
+    - document.getElementById 메소드 : 인자로 HTML element 태그의 id를 전달하면 해당 엘리먼트가 반환됨
+  - .innerHTML 속성
+    - 엘리먼트 안의 HTML 코드를 변경
+  - .innerText 속성
+    - 엘리먼트 안의 텍스트를 변경
+  - .style 속성
+    - css를 변경 가능
+  - getAttribute 메소드
+    - element의 속성의 값을 얻어옴
+    - 하나의 인자: attribute 이름을 받음
+    - 직접 개체에 동기화하지 않는 속성에 대해서도 접근이 가능
+  - setAttribute 메소드
+    - element의 속성의 값을 설정함
+    - 두개의 인자: attribute 이름, 설정할 속성의 값을 받음
+    - 직접 개체에 동기화되지 않는 속성에 대해서도 값 설정이 가능
+
+4. 다중 Element 선택
+  - Document API
+    - document.getElementsBy~ : 다중 엘리먼트를 선택하는 메소드. 배열형태로 값을 반환함
+  - document.getElementsByTagName 메소드
+    - 인자로 HTML element 태그의 이름을 전달하면 해당 엘리먼트들이 반환됨
+  - document.getElementsClassName 메소드
+    - 인자로 class의 이름을 전달하면, 해당 class의 모든 엘리먼트가 배열로 반환됨
+  - document.getElementsByName 메소드
+    - 인자로 name을 전달하면, 해당 name 속성을 가진 모든 엘리먼트가 배열로 반환됨.
+  - Element API 
+    - .value 속성: input element에 입력된 값은 .value를 통해 얻어올 수 있음
+    - 주의해야 할 점: getAttribute 메소드로는 받아올 수 없음
+
+5. CSS selector를 이용한 Element 선택
+  - Document API
+    - document.querySelector : css selector를 기반으로 엘리먼트를 선택
+    - 조건에 부합하는 element가 여러개인 경우 첫 엘리먼트만 반환
+    - document.querySelectorAll : css selector를 기반으로 만족하는 모든 엘리먼트를 선택
+  - CSS Selector
+    - <code>#</code> : name기반으로 선택
+    - <code>.</code> : class 기반으로 선택
+    - <code>,</code> : 여러개의 셀렉터를 사용
+
+6. Element 추가/삭제
+  - Document API
+    - document.createElement() : 문자열 인자로 element tag를 입력하면 해당 엘리먼트가 생성돼 반환됨
+  -  Element API
+    - .appendChild(인자) : 추가할 element를 인자로 받아 호출된 element의 자식으로 인자를 추가함 (가장 마지막에)
+    - .removeChild(인자) : 삭제할 element를 인자로 받아 호출된 element의 자식중에 해당 element를 삭제
+    - .insertBefore(인자1, 인자2) : 인자 1로 받은 element를 호출된 element의 자식 중 인자 2의 이전에 추가함
+    - .cloneNode() : 호출된 element를 복사해서 반환함
