@@ -1184,7 +1184,7 @@ setInterval()|일정 시간마다 지정된 명령을 반복 호출
   > 1. 내장객체는 모든 자바스크립트 환경에서 이용가능한 핵심적인 객체로 자바스크립트에서 자체적으로 지원하는 것이다.
   > 2. Array Date String Math 객체 등이 있다.
 
-  ## 내장객체
+## 내장객체
   객체|기능
   |---|----|
   Array|비슷한 종류의 데이터를 하나의 배열로 생성
@@ -1309,7 +1309,7 @@ setTimeout()|일정 시간 후 지정된 처리를 호출
 6. Element 추가/삭제
   - Document API
     - document.createElement() : 문자열 인자로 element tag를 입력하면 해당 엘리먼트가 생성돼 반환됨
-  -  Element API
+  - Element API
     - .appendChild(인자) : 추가할 element를 인자로 받아 호출된 element의 자식으로 인자를 추가함 (가장 마지막에)
     - .removeChild(인자) : 삭제할 element를 인자로 받아 호출된 element의 자식중에 해당 element를 삭제
     - .insertBefore(인자1, 인자2) : 인자 1로 받은 element를 호출된 element의 자식 중 인자 2의 이전에 추가함
