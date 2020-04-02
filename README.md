@@ -1472,3 +1472,63 @@ req.send();
 - f12 > console에 에러 메세지가 없다면 Network를 클릭한다
 - HTML 파일 로드 뒤 이후 data.txt가 xhr에 의해 요청되어 응답이온 것을 볼 수 있음
 - console에서 req.response를 입력하면 data.txt.에 저장된 내용이 console창에 출력됨
+
+## AJAX Response 받아서 처리하기
+1. readyState 속성
+  - AJAX 요청에 따라 0~4까지 변화함
+readyState|의미
+|----------|----|
+0|open 메소드 호출전
+1|open 메소드 호출 후, send 메소드 호출 전
+2|보낸 요청에 대해 응답 헤더가 수신 된 후
+3|응답의 바디 부분이 수신중일 때
+4|모든 응답이 수신 되었을 때
+
+2. onreadystatechange 속성
+  - readyState가 변할 때마다 호출되는 콜백 함수
+
+3. status 속성
+  - HTTP response의 응답 헤더에 기록된 코드
+Response Code|의미
+|------------|---|
+200|OK
+404|Not Found
+500|Internet Error
+...|...
+
+4. 응답을 정상적으로 수신한 경우
+  - readyState : 4
+  - Status : 200
+
+5. 기타 callback function 활용 가능한 속성
+  - onloadstart
+  - onprogress
+  - onabort
+  - onerror
+  - onload
+  - ontimeout
+  - onloadend
+
+### :cake: AJAX - response 받아서 처리하기
+````html
+<!--작업하기 전에 크롬 속성 > 바로가기 > 대상 T에 .exe" 뒤에 --disable-web-security를 넣어서 보안을 비활성화 할것-->
+<html>
+  <head>
+    <script>
+      var req = nex XMLHttpRequest();
+      req.onreadystatechange = function a(){
+        console.log(this.readyState, this.status);
+        if ( this.readyState == 4 && this.stauts == 200 ){
+            console.log(this.response);
+        }
+      }
+      req.open("GET", "http://google.com");
+      req.send();
+      //console에 출력되는 내용은 1~4까지 순차적으로 출력이되는 것을 확인할 수 있음.
+      //stauts는 응답 코드로 200, 404, 500 등의 코드로 출력됨 
+      //if문을 통해 데이터가 콘솔에 정상적으로 출력되는 것을 볼 수 있음
+    </script>
+  </head>
+  <body></body>
+</html>
+````
