@@ -1425,3 +1425,50 @@ document.getElementById("form1").addEventListener(
     - 실제로는 keydown event → keypress event →  keyup event 순으로 이벤트가 발생하며 keypress event 발생시에 키가 입력됨
     - keydown event 에서 return false를 한 경우 keypress event가 이어서 발생하지 않음.
 
+## AJAX
+> AJAX ( Asynchronous Javascript and XML )
+1. 브라우저에서 페이지를 이동하지 않고 자바스크립트를 통해 HTTP Request를 보내고 받아 JS에서 처리할 수 있음
+2. 사용자에게 더 나은 사용 경험을 제공, 대부분의 웹사이트에서 사용되고 있는 기술
+3. AJAX를 위한 객체 생성
+````javascript
+var req = nex XMLHttpRequest();
+// HTTP 요청을 만들 수 있는 새로운 객체를 생성하는 명령
+````
+4. 요청의 방식과 URL 설정
+````javascript
+req.open("GET", "./data.txt");
+// http request method와 url 설정
+````
+5. 요청 전송
+````javascript
+req.send();
+````
+6. 응답확인
+- req.response에 저장됨
+- 비동기 방식으로 요청하기 때문에 send 메소드 호출 후, 바로 코드에서 접근하면 데이터가 비어있음
+- AJAX 진행에 따라 호출되는 callback 함수를 활용해야함
+7. 브라우저 옵션
+- *--disable-web-security 옵션*
+  - 브라우저의 보안 정책을 우회하기 위해 사용하는 옵션
+  - same-origin-policy 등을 비활성화 함
+
+### :cake: AJAX - Request 보내기
+````html
+<!--작업하기 전에 크롬 속성 > 바로가기 > 대상 T에 .exe" 뒤에 --disable-web-security를 넣어서 보안을 비활성화 할것-->
+<html>
+  <head>
+    <script>
+      var req = nex XMLHttpRequest();
+      req.open("GET", "./data.txt");
+      req.send();
+      //console.log(req.response);로 입력해도 바로 콘솔창에 출력되지 않음!!! 나중에 접근했을때만 확인 가능. 비동기로 요청하기 때문에 바로 접근할 수 없기 때문
+    </script>
+  </head>
+  <body></body>
+</html>
+````
+- 예제를 작업하기전 크롬 속성에 들어가서 보안을 비활성화 해야함
+- 같은 폴더 내 위치한 (data.txt) 내용을 불러올것임
+- f12 > console에 에러 메세지가 없다면 Network를 클릭한다
+- HTML 파일 로드 뒤 이후 data.txt가 xhr에 의해 요청되어 응답이온 것을 볼 수 있음
+- console에서 req.response를 입력하면 data.txt.에 저장된 내용이 console창에 출력됨
