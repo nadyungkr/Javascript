@@ -1532,3 +1532,62 @@ Response Code|의미
   <body></body>
 </html>
 ````
+
+## JSON
+> JSON : Javascript Object Notification
+1. 자바스크립트의 객체를 문자열로 표현하는 방법
+  - 프로그램 간에 전달하기 편리함 (서버 -> 브라우저)
+
+2. JSON API
+  - <code>JSON.stringify ( object )</code>
+    - 인자로 받은 객체를 JSON 문자열로 반환함
+  - <code>JSON.parse( string )</code>
+    - 인자로 받은 문자열을 Javascript Object로 변경해 반환함
+````javascript
+var original_obj = { pi:3.14, str:"string" };
+
+var json_str = JSON.stringify ( original_obj );
+//반환 문자열 : { "pi" : 3.14 , "str" : "string" }
+
+var parsed_obj = JSON.parse( json_Str );
+
+console.log( original_obj ); // { pi : 3.14, str : "string" } 
+console.log( parsed_obj ); // { pi :3 .14, str : "string" }
+````
+
+3. undefined, function은 반환되지 않음에 주의!
+
+### :cake: example JSON 문자열 > 객체, 객체 > 문자열 해보기
+````javascript
+
+var arr = [
+  "문자열", 3.14, true, null, undefined, function a(){ console.log("Hello world!") }
+]
+var t = JSON.stringify(arr);
+//console에 t를 입력하면 출력되는 내용
+/*
+  "[ "문자열",3.14,true,null,null,null ]"
+*/
+//console에 JSON.parse(t);를 입력하면 출력되는 내용
+/*
+  [ "문자열",3.14,true,null,null,null ]
+*/
+var obj = {
+  "str":"문자열",
+  "num":3.14,
+  "boolean":true,
+  "null":null,
+  "undefined":undefined,
+  "method":function a(){ console.log("method") }
+}
+var t2 = JSON.stringify(obj);
+//console에 t2 를 입력하면 출력되는 내용
+/*
+  "{"str":"문자열","num":3.14,"boolean":true,"null":null}"
+  undefined와 function은 누락되었음
+*/
+//console에 JSON.parse(t2);를 입력하면 출력되는 내용
+/*
+Object { str:"문자열", nun:3.14, boolean:true, null:null }
+*/
+````
