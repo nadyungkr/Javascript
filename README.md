@@ -1476,8 +1476,9 @@ req.send();
 ## AJAX Response 받아서 처리하기
 1. readyState 속성
   - AJAX 요청에 따라 0~4까지 변화함
+
 readyState|의미
-|----------|----|
+|---------|----|
 0|open 메소드 호출전
 1|open 메소드 호출 후, send 메소드 호출 전
 2|보낸 요청에 대해 응답 헤더가 수신 된 후
@@ -1489,6 +1490,7 @@ readyState|의미
 
 3. status 속성
   - HTTP response의 응답 헤더에 기록된 코드
+
 Response Code|의미
 |------------|---|
 200|OK
