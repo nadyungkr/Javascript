@@ -1591,3 +1591,76 @@ var t2 = JSON.stringify(obj);
 Object { str:"문자열", nun:3.14, boolean:true, null:null }
 */
 ````
+
+## AJAX를 통해 JSON 데이터를 받아오기
+````javascript
+var req = nex XMLHttpRequest();
+
+req.onreadystatechange = function(){
+    if ( this.readyState == 4 ) {
+          // ...
+    }
+}
+
+req.open( "GET", JSON_DATA_URL );
+req.send();
+````
+- JSON.parse API를 이용해 받아온 JSON문자열 데이터를 Javascript 객체로 변환
+````javascript
+req.onreadystatechange = function(){
+    if( this.readyState == 4 ){
+        var data = JSON.parse(this.response);
+        //....
+    }
+}
+````
+- 데이터를 처리하는 Javascript 프로그램 실행 (HTML 문서에 반영)
+  - 데이터가 여러개인 경우 (배열 형태로 값을 받은 경우) 반복문으로 각각 데이터에 대해 처리
+````javascript
+for ( var i = 0 ; i < data.length ; i ++ ) {
+    document.write(data[i].id, data[i].msg);
+}
+
+````
+
+## :cake: AJAX + JSON 문자열을 객체로 변환하기
+````html
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .character{color:black;}
+      .word{color:gray;}
+    </style>
+
+    <script>
+
+      var req = new XMLHttpRequest();
+      req.onreadystatechange = function a(){
+        console.log(this.readyState, this.status);
+        if ( this.readyState == 4 ){
+          console.log(this.response);
+          var data = JSON.parse(this.response);
+          for ( var i in data ){
+            var t = document.getElementById("template").cloneNode(true);
+            t.removeAtrribute("id");
+            t.children[0].innerText = data[i].id;
+            t.children[1].innerText = data[i].msg;
+            document.body.appendChild(t);
+          }
+        }
+      }
+      req.open("GET", "./json_data.txt");
+      req.send();
+    </script>
+  </head>
+  <body>
+    <p id="template">
+      <span class="character">주인공</span>
+      :
+      <span class="word">명대사</span>
+    </p>
+  </body>
+</html>
+````
+-  html 내에 출력되는 내용은 주인공:명대사 밑으로 저장된 명대사 데이터들이 불러와진다
