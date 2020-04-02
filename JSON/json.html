@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>주인공 명대사</title>
+    <style>
+      .character{color:black;}
+      .word{color:gray;}
+    </style>
+
+    <script>
+      var req = new XMLHttpRequest();
+      req.onreadystatechange = function a(){
+        console.log(this.readyState, this.status);
+        if ( this.readyState == 4 ){
+            console.log(this.response);
+            var data = JSON.parse(this.response);
+            for ( var i in data ){
+                var t = document.getElementById("para1").cloneNode(true);
+                t.children[0].innerText = data[i].id;
+                t.children[1].innerText = data[i].msg;
+                document.body.appendChild(t);
+          }
+        }
+      }
+      req.open("GET", "./json_data.txt");
+      req.send();
+    </script>
+  </head>
+  <body>
+    <p id ="para1">
+      <span class="character">주인공</span>
+      :
+      <span class="word">명대사</span>
+    </p>
+  </body>
+</html>
