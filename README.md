@@ -1891,8 +1891,4 @@ finally in Function - this code will always be executed
 Catch error : error
 finally - this code will always be executed
 */
-<<<<<<< HEAD
 ````
-=======
-````
->>>>>>> 3ac5b37de3bdb0feee4a69b63c226ea002689e33
