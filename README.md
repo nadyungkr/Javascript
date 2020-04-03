@@ -1786,4 +1786,110 @@ Catch error : error
 Finally - this code will always be executed
 */
 ````
+````javascript
+function errFunc(){
+  throw "error";
+  console.log("this code will not be executed");
+}
+try {
+  console.log("try - 1");
+  errFunc();
+  console.log("try - 2");
+}
+catch(e) {
+  console.log("Catch error :" , e);
+}
+finally {
+  console.log("Finally - this code will always be executed");
+}
+//errFunc에서는 catch 구문이 존재 하지 않아 try구문에서 실행되면서 catch구문을 찾게 됨
+//console에 출력되는 내용
+/*
+try - 1
+Catch error : error
+Finally - this code will always be executed
+*/
+````
+````javascript
+function errFunc(){
+  throw "error";
+  console.log("this code will not be executed");
+}
 
+function func(){
+
+  try {
+    console.log("Function - 1");
+    errFunc();
+    console.log("Function - 2");
+  }
+  catch(e) {
+    console.log("Catch error in Function :" , e);
+  }
+  finally {
+    console.log("Finally in Function - this code will always be executed");
+  }
+}
+
+try {
+  console.log("try - 1");
+  func();
+  console.log("try - 2");
+}
+catch(e) {
+  console.log("Catch error :" , e);
+}
+finally {
+  console.log("Finally - this code will always be executed");
+}
+// console 에 출력되는 내용
+/*
+try - 1
+function - 1
+Catch error in Function : error
+finally in Function - this code will always be executed
+try - 2
+finally - this code will always be executed
+*/
+// 
+````
+````javascript
+function errFunc(){
+  throw "error";
+  console.log("this code will not be executed");
+}
+
+function func(){
+
+  try {
+    console.log("Function - 1");
+    errFunc();
+    console.log("Function - 2");
+  }
+  // catch(e) {console.log("Catch error :" , e);}를 지우면?
+  finally {
+    console.log("Finally in Function - this code will always be executed");
+  }
+}
+
+try {
+  console.log("try - 1");
+  func();
+  console.log("try - 2");
+}
+catch(e) {
+  console.log("Catch error :" , e);
+}
+finally {
+  console.log("Finally - this code will always be executed");
+}
+// console 에 출력되는 내용
+/*
+try - 1
+function - 1
+finally in Function - this code will always be executed
+Catch error : error
+finally - this code will always be executed
+*/
+// 
+````
