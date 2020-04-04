@@ -45,3 +45,7 @@ input{
     margin-top:-100px;
     opacity:0.95;
 }
+p{
+    clear: both;
+    text-align: left;
+}
