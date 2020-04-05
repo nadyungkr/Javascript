@@ -26,3 +26,19 @@ req.onreadystatechange = function(){
     }
 }
 req.send();
+
+function selectAll(btn){
+    var images = document.getElementsByClassName("image");
+    for ( var i = 0 ; i < images.length ; i++ ){
+        if ( btn.value == "Unselected All") {
+            images[i].classList.remove("image-selected");
+        } else {
+            images[i].classList.add("image-selected");
+        }
+    }
+    if ( btn.value == "Unselected All" ){
+        btn.value = "Selected All";
+    } else {
+        btn.value = "Unselected All";
+    }
+}
