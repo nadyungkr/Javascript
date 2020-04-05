@@ -2,25 +2,27 @@ body{
     overflow-x:hidden;
     text-align: center;
 }
-
 h1, h2{
     text-align: center;
     margin:0;
     padding:10px;
 }
-
-input{
+input,button{
     text-align: center;
     width:200px;
     height:30px;
     font-size:15px;
+    outline:none;
 }
-
+a{
+    color:black;
+    text-decoration: none;
+}
 .image{
     position:relative;
     float: left;
     height: 200px;
-    width:300px;
+    width: 300px;
     margin : 2px;
     border: 1px solid white;
     z-index:0;
@@ -35,16 +37,6 @@ input{
 }
 .image > img{
     height:100%;
-}
-.image-magnified{
-    z-index:1;
-}
-.image-magnified > img{
-    height:400px;
-    width:600px;
-    margin-left:-150px;
-    margin-top:-100px;
-    opacity:0.95;
 }
 p{
     clear: both;
