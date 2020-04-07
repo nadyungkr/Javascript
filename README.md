@@ -1162,7 +1162,7 @@ var counter2 = makeCounterFunction(10);
 |-------|------------------------|
 alert()|메세지 창을 생성
 eval()|문자열로 입력된 수식을 계산
-parselnt()|문자열을 정수로 변환
+parseInt()|문자열을 정수로 변환
 parseFloat()|문자열을 실수(부동소수점)로 변환
 confirm()|<code>[확인][취소]</code>버튼이 나타나는 메세지 창을 생성
 escape()|문자의 ASCII값을 변환
