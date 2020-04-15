@@ -1209,8 +1209,8 @@ setInterval()|일정 시간마다 지정된 명령을 반복 호출
   split(분리자)|'분리자'를 이용하여 문자열을 분리함으로써 두 개 이상의 문자열로 반환
   replace()|특정 문자열을 지정한 문자열로 변경
   match()|일치하는 문자열 반환
-  loLowerCase()|소문자 형태로 반환
-  loUpperCase()|대문자 형태로 반환
+  toLowerCase()|소문자 형태로 반환
+  toUpperCase()|대문자 형태로 반환
 
 ## Window 객체의 속성
 객체 속성|기능
