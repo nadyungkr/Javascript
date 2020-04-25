@@ -451,6 +451,11 @@ arr.reverse();
 //[9, 3, 2, 11, 10, 1]
 ````
 
+### sort() 함수를 쓸 때 숫자를 오름차순으로 정렬하는 방법
+```javascript
+array.sort( function(a, b){ return a -b });
+```
+
 ## Object  
 
 1. object는 array와 달리 순서는 중요하지 않다.
