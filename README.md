@@ -1309,6 +1309,39 @@ Math.tanh(x)|숫자의 쌍곡탄젠트 값을 반환
 Math.toSource()|문자열 `"Math"`를 반환
 Math.trunc(x)|숫자의 정수 부분을 반환
 
+## Date
+- `Date` 생성자는 시간의 특정 지점을 나타내는 `Date` 객체를 생성.
+- `Date` 객체 초기화는 `new`연산자를 사용하는 것이 유일
+```javascript
+let now = new Date();
+```
+- 단순히 `Date` 객체를 직접 호출 했을 때, 반환 값은 `Date` 객체가 아니라 날짜를 나타낸 문자열.
+
+## Date 구문
+```javascript
+new Date();
+new Date(value);
+new Date(dateString);
+new Date(year, monthIndex[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);
+```
+
+### Date() 생성자
+- 매개변수가 없는 경우
+  - 매개변수를 제공하지 않으면, 현지 시간으로 생성 순간의 날짜와 시간을 나타내는 `Date` 객체를 생성
+- 유닉스 타임스탬프
+  - `value` 유닉스 타임스탬프, 즉 1970년 1월 1일 00:00:00 UTC (유닉스 시간)부터의 시간을 밀리초 단위로 표현하되 윤초는 무시한 정숫값. 대부분의 유닉스 타임스탬프 함수는 초 단위까지만 정확함
+- 타임스탬프 문자열
+  - `dateString` 날짜를 표현하는 문자열의 값. `Date.parse()` 메서드가 인식할 수 있는 형식이어야함
+- 개별 날짜 및 시간 구성 요소
+  - 적어도 연도와 월이 주어지면, 자신의 구성요소 (년, 월, 일, 시, 분, 초 밀리초)를 모두 매개변수의 값에서 가져오는 `Date`객체를 생성. 누락한 요소에는 가장 낮은 값 (`day`는 1, 나머지는 0을 사용)
+  - `year` 연도를 나타내는 정숫값. 0부터 99는 1900 ~ 1999.
+  - `monthIndex` 월을 나태는 정숫값. 0은 1월, 11은 12월
+  - `day` 일을 나타내는 정숫값. 기본값 1 `(optional)`
+  - `hours` 시를 나타내는 정숫값. 기본값 0(자정) `(optional)`
+  - `minutes` 분을 나타내는 정숫값. 기본값 0분 `(optional)`
+  - `seconds` 초를 나타내는 정숫값. 기본값 0초 `(optional)`
+  - `milliseconds` 밀리초를 나타내는 정숫값. 기본값 0밀리초 `(optional)`
+
 ## DOM + JS (Javascript)
 > DOM (document Object Model, 문서 객체 모델) : 컴퓨터가 문서를 잘 처리할 수 있도록 문서에 대한 구조를 약속한 것
  >> Tree 형태를 따름 : 족보나 가계도와 비슷함. 부모 요소와 자식 요소 구분
