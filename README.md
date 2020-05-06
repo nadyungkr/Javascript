@@ -504,7 +504,7 @@ document.getElementById("example").innerHTML = hyeonjeong.fullName;
 - 특정 위치 문자열 나타내기 (charAt 함수이용, 대괄호 사용)
 - 부분 문자열 구하기 (substring, substr 함수 이용)
   - substring(pos1,pos2) : pos1에서 pos2까지의 부분 문자열 반환, pos2를 생략시 pos1부터 마지막까지의 문자열 반환
-  - substr(pos,length) : pos에서 length길이만큼 부분 문자열 반환, length 생략시 pos부터 마지막까지의 문자열 반환, pos가 음수인 경우 str.length - pos로 동작 
+  - substr(pos,length) : pos에서 length만큼 부분 문자열 반환, length 생략시 pos부터 마지막까지의 문자열 반환, pos가 음수인 경우 str.length - pos로 동작 
 - 문자열 검색하기 (indexOf) : 사용하는 문자열이 있는경우 해당 시작위치를 반환시켜줌
 
 ### :cake: example 문자열 다루기
@@ -555,6 +555,30 @@ str.lastIndexOf("bc"); //마지막 문자열 위치
 str.indexOf("f") //사용하지 않은 문자열인 경우 -1로 반환
 // -1
 ````
+
+### :cake: example String.prototype.repeat()
+- `repeat()` 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환
+- 구문
+```javascript
+str.repeat(count);
+```
+- 매개변수
+  - `count`
+  - 문자열을 반복할 횟수. 0과 양의 무한대 사이의 정수([0, +∞])
+- 반환 값
+  - 현재 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열
+```javascript
+'abc'.repeat(-1);   // RangeError
+'abc'.repeat(0);    // ''
+'abc'.repeat(1);    // 'abc'
+'abc'.repeat(2);    // 'abcabc'
+'abc'.repeat(3.5);  // 'abcabcabc' (count will be converted to integer)
+'abc'.repeat(1/0);  // RangeError
+
+({ toString: () => 'abc', repeat: String.prototype.repeat }).repeat(2);
+// 'abcabc' (repeat() is a generic method)
+```
+
 
 ## 제어문
 종류|설명
@@ -1216,6 +1240,7 @@ setInterval()|일정 시간마다 지정된 명령을 반복 호출
   match()|일치하는 문자열 반환
   toLowerCase()|소문자 형태로 반환
   toUpperCase()|대문자 형태로 반환
+  repeat()|문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환
 
 ## Window 객체의 속성
 객체 속성|기능
