@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html에 자바스크립트 로드하기</title>
+	<script src="./script2.js"></script>
+</head>
+<body>
+	<input type="button" value="Hello World" onclick="alert('Hello World')" />
+	<input type="button" value="Hello World2" id="hj" />
+	<input type="button" value="Hello World3" id="file" />
+	<script src="./script.js"></script>
+	<script>
+		var hj = document.getElementById("hj");
+		hj.addEventListener('click', function(){
+			alert('Hello World3');
+		})
+	</script>
+</body>
+</html>
